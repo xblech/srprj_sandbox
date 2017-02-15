@@ -1,0 +1,71 @@
+name: "Senior Project"
+navbar:
+  title: "Senior Project - Dylan Blechner"
+#  type: inverse
+  left:
+    - text: "The Statistic"
+      href: thestat.html
+    - text: "The Data"
+      href: thedata.html
+      menu:
+        - text: "The Data"
+          href: thedata.html
+        - text: "--------------"
+        - text: "2007-2008"
+          href: thedata2007.html
+        - text: "2008-2009"
+          href: thedata2008.html
+        - text: "2009-2010"
+          href: thedata2009.html
+        - text: "2010-2011"
+          href: thedata2010.html
+        - text: "2011-2012"
+          href: thedata2011.html
+        - text: "2012-2013"
+          href: thedata2012.html
+        - text: "2013-2014"
+          href: thedata2013.html
+        - text: "2014-2015"
+          href: thedata2014.html
+        - text: "2015-2016"
+          href: thedata2015.html
+    - text: "NBA Predictions"
+      href: nbapredictions.html
+      menu:
+        - text: "Predictions"
+          href: nbapredictions.html
+        - text: "--------------"
+        - text: "Predict All Positions"
+          href: nbaallpos.html
+        - text: "--------------"
+        - text: "NBA Centers"
+          href: nbacenters.html
+        - text: "NBA Point Guards"
+          href: nbapointguards.html
+        - text: "NBA Shooting Guards"
+          href: nbashootingguards.html
+        - text: "NBA Small Forwards"
+          href: nbasmallforwards.html
+        - text: "NBA Power Forwards"
+          href: nbapowerforwards.html
+    - text: "Salary Comparisons"
+      href: salarycomparisons.html
+    - text: "Refs"
+      href: refs.html
+    - text: "Step-by-Steps"
+      href: stepbystep.html
+output:
+  html_document:
+#    theme:  default
+#    theme:  cerulean
+##    theme:  journal
+#    theme:  flatly
+# Old Theme #    theme:  readable
+#    theme:  spacelab
+#    theme:  united
+#    theme:  cosmo
+##    theme:  lumen
+##    theme:  paper
+##    theme:  sandstone
+#    theme:  simplex
+    theme:  yeti
