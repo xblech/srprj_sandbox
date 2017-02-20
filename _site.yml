@@ -35,7 +35,10 @@ navbar:
         - text: "Predictions"
           href: nbapredictions.html
         - text: "--------------"
-        - text: "Predict All Positions"
+        - text: "NEW Model3"
+          href: nbamodel3.html
+#        - text: "Predict All Positions"
+        - text: "Older Models"
           href: nbaallpos.html
         - text: "--------------"
         - text: "NBA Centers"
