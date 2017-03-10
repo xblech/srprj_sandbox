@@ -35,7 +35,9 @@ navbar:
         - text: "Predictions"
           href: nbapredictions.html
         - text: "--------------"
-        - text: "NEW Model3"
+        - text: "NEW Model4"
+          href: nbamodel4.html
+        - text: "Model3"
           href: nbamodel3.html
 #        - text: "Predict All Positions"
         - text: "Older Models"
