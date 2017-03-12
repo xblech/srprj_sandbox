@@ -340,9 +340,6 @@ div.tocify {
     </li>
     <li class="divider"></li>
     <li>
-      <a href="nbacenters.html">NBA Centers</a>
-    </li>
-    <li>
       <a href="nbapointguards.html">NBA Point Guards</a>
     </li>
     <li>
@@ -353,6 +350,9 @@ div.tocify {
     </li>
     <li>
       <a href="nbapowerforwards.html">NBA Power Forwards</a>
+    </li>
+    <li>
+      <a href="nbacenters.html">NBA Centers</a>
     </li>
   </ul>
 </li>
@@ -411,10 +411,14 @@ div.tocify {
 </div>
 <div id="explanation-of-multiple-linear-regression" class="section level3">
 <h3>EXPLANATION OF MULTIPLE LINEAR REGRESSION</h3>
+<p><br> The predicted salary is calculated by using a multiple linear regression, which takes numerous like variables into account to produce an end product. A multiple linear regression is written out as y=m1x1 + m2x2 + m3x3 + … + b. In this form, the numerous “x’s” indicate certain variables that each have their own slope (m). The b, like in standard form indicates a y-intercept or starting point and can also be written as m0. This type of regression works perfectly in this scenario as many NBA statistics (Points, Rebounds, Assists, etc.) can be used as variables along with a slope for each to produce a predicted salary.</p>
+<p><br> <a href="http://www.stat.yale.edu/Courses/1997-98/101/linmult.htm">reference site: Yale University</a></p>
 <p><br><br></p>
 </div>
 <div id="how-i-arrived-at-my-statistic" class="section level3">
 <h3>HOW I ARRIVED AT MY STATISTIC</h3>
+<p><br> First, I ran a partial f-test with all of the variables gathered to eliminate those that were not statistically significant in the model. After running several partial f-tests, I decided to eliminate the variables from the “Playoff” data portion as they skewed the model and were not statistically significant overall. I believe this occurred because of the few number of players that actually made the playoffs in the past year while those that did may only have played a handful of games. For example, <strong>example here</strong>. I also eliminated the variable “Experience” from the f-test as well because this value was also skewing the data set. Similarly, I removed the variables from the “Career” portion as well. Players like Vince Carter, Paul Pierce, and Deron Williams who have played for many years with impressive statistics and a lot of experience were predicted to be paid quite high which I believe is untrue. Although they have played phenomenally in past years, their present-day statistics are not as impressive as they used to be. After removing these variables, I ran another partial f-test to eliminate any other variables that were no statistically significant. I tried to keep only variables with a p-value lower than .05 to improve the model. The model above includes the intercept (constant) along with all of the significant variables with their corresponding coefficient. I used this same process to come up with models for each position.</p>
+<p><br> <a href="http://www.stat.columbia.edu/~martin/W2024/R6.pdf">reference site: Columbia University</a></p>
 <p><br><br></p>
 </div>
 

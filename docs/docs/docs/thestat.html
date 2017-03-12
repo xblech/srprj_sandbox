@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="Dylan Blechner" />
+
+<meta name="date" content="2017-02-15" />
+
+<title>The Statistic</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 45px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+.section h2 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h3 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h4 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h5 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h6 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Senior Project - Dylan Blechner</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="thestat.html">The Statistic</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    The Data
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="thedata.html">The Data</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="thedata2007.html">2007-2008</a>
+    </li>
+    <li>
+      <a href="thedata2008.html">2008-2009</a>
+    </li>
+    <li>
+      <a href="thedata2009.html">2009-2010</a>
+    </li>
+    <li>
+      <a href="thedata2010.html">2010-2011</a>
+    </li>
+    <li>
+      <a href="thedata2011.html">2011-2012</a>
+    </li>
+    <li>
+      <a href="thedata2012.html">2012-2013</a>
+    </li>
+    <li>
+      <a href="thedata2013.html">2013-2014</a>
+    </li>
+    <li>
+      <a href="thedata2014.html">2014-2015</a>
+    </li>
+    <li>
+      <a href="thedata2015.html">2015-2016</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    NBA Predictions
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="nbapredictions.html">Predictions</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="nbamodel4.html">NEW Model4</a>
+    </li>
+    <li>
+      <a href="nbamodel3.html">Model3</a>
+    </li>
+    <li>
+      <a href="nbaallpos.html">Older Models</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="nbacenters.html">NBA Centers</a>
+    </li>
+    <li>
+      <a href="nbapointguards.html">NBA Point Guards</a>
+    </li>
+    <li>
+      <a href="nbashootingguards.html">NBA Shooting Guards</a>
+    </li>
+    <li>
+      <a href="nbasmallforwards.html">NBA Small Forwards</a>
+    </li>
+    <li>
+      <a href="nbapowerforwards.html">NBA Power Forwards</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="salarycomparisons.html">Salary Comparisons</a>
+</li>
+<li>
+  <a href="refs.html">Refs</a>
+</li>
+<li>
+  <a href="stepbystep.html">Step-by-Steps</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">The Statistic</h1>
+<h4 class="author"><em>Dylan Blechner</em></h4>
+<h4 class="date"><em>February 15, 2017</em></h4>
+
+</div>
+
+
+<p><br></p>
+<p>The NEW Model4 equation for my statistic, after choosing variables by hand and running a stepwise backward regression, is: <br> <br></p>
+<blockquote>
+<p>NBA Salary = $911,963 + $374,573 Exp - $131,612 Age - $5,234 FTA + $1,277,827 FTpct - $33,718 Last2YrsG + $5,901 Last2YrsFG + $6,902 Last2Yrs3P + $5,877 Last2YrsFTA + $4,239 Last2YrsDRB + $3,185 Last2YrsAST - $4,227 Last2YrsSTL + $10,663 Last2YrsBLK - $2,543 Last2YrsPF + $46,299 PlayoffGS - $42,018 PlayoffFG + $23,785 PlayoffFGA + $115,193 Playoff3P - $37,601 Playoff3PA - $55,439 PlayoffFT + $45,990 PlayoffFTA - $55,315 PlayoffTOV - $22,558 CareerPlayoffG + $17,415 CareerPlayoffFG - $5,666 CareerPlayoffFGA - $8,778 CareerPlayoff3P + $18,936 CareerPlayoffFT - $14,100 CareerPlayoffFTA + $19,116 CareerPlayoffORB - $9,263 CareerPlayoffDRB - $4,911 CareerPlayoffAST + $28,184 CareerPlayoffSTL - $12,596 CareerPlayoffBLK + $9,873 CareerPlayoffTOV</p>
+</blockquote>
+<p><br><br></p>
+<p>The NEW Model3 equation for my statistic, after choosing variables by hand and running a stepwise backward regression, is: <br> <br></p>
+<blockquote>
+<p>NBA Salary = $8,831,207 + $1,962,105 Ht - $138,097 Age + $8,643 GS + $4,060 AST + $2,235 PTS - $1,195 CareerFGA + $220 CareerTRB + $1,160 CareerPTS</p>
+</blockquote>
+<p><br><br></p>
+<p>The ORIGINAL equation for my statistic, before removing negative coefficients that don’t make sense, is: <br> <br></p>
+<blockquote>
+<p>NBA Salary = $4,890,136 + $1,456,354 Ht - $103,062 Age - $68,397 G + $4,200 FGA + $1,346,387 FTpct - $5,225 ORB + $6,300 DRB + $5,540 AST + $8,512 BLK + $5,235 CareerFG - $2,120 CareerFGA + $741 Career3PA + $1,869 CareerORB + $12,130 PlayoffFTA + $54,807 PlayoffORB - $29,553 PlayoffTOV - $3,289 CareerPlayoffFG + $8,362 CareerPlayoffFT - $9,124 CareerPlayoffDRB + $25,271 CareerPlayoffSTL</p>
+</blockquote>
+<p><br><br></p>
+<p>The NEW equation for my statistic, after removing negative coefficients, is: <br> <br></p>
+<blockquote>
+<p>NBA Salary = $10,322,265 + $2,276,995 Ht - $170,191 Age + $2,880 FGA + $5,329 AST + $1,228 CareerFG + $1,018 CareerORB + $30,521 PlayoffFTA + $21,269 PlayoffORB - $39,244 PlayoffTOV + $6,291 CareerPlayoffSTL</p>
+</blockquote>
+<p><br><br></p>
+<div id="explanation-of-my-statistic" class="section level3">
+<h3>EXPLANATION OF MY STATISTIC</h3>
+<p><br><br></p>
+</div>
+<div id="explanation-of-multiple-linear-regression" class="section level3">
+<h3>EXPLANATION OF MULTIPLE LINEAR REGRESSION</h3>
+<p><br><br></p>
+</div>
+<div id="how-i-arrived-at-my-statistic" class="section level3">
+<h3>HOW I ARRIVED AT MY STATISTIC</h3>
+<p><br><br></p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

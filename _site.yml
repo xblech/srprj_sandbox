@@ -43,8 +43,6 @@ navbar:
         - text: "Older Models"
           href: nbaallpos.html
         - text: "--------------"
-        - text: "NBA Centers"
-          href: nbacenters.html
         - text: "NBA Point Guards"
           href: nbapointguards.html
         - text: "NBA Shooting Guards"
@@ -53,6 +51,8 @@ navbar:
           href: nbasmallforwards.html
         - text: "NBA Power Forwards"
           href: nbapowerforwards.html
+        - text: "NBA Centers"
+          href: nbacenters.html
     - text: "Salary Comparisons"
       href: salarycomparisons.html
     - text: "Refs"

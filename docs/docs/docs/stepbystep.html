@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="Dylan Blechner" />
+
+<meta name="date" content="2016-12-11" />
+
+<title>Step-by-Step Instructions</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 45px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+.section h2 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h3 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h4 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h5 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h6 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Senior Project - Dylan Blechner</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="thestat.html">The Statistic</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    The Data
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="thedata.html">The Data</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="thedata2007.html">2007-2008</a>
+    </li>
+    <li>
+      <a href="thedata2008.html">2008-2009</a>
+    </li>
+    <li>
+      <a href="thedata2009.html">2009-2010</a>
+    </li>
+    <li>
+      <a href="thedata2010.html">2010-2011</a>
+    </li>
+    <li>
+      <a href="thedata2011.html">2011-2012</a>
+    </li>
+    <li>
+      <a href="thedata2012.html">2012-2013</a>
+    </li>
+    <li>
+      <a href="thedata2013.html">2013-2014</a>
+    </li>
+    <li>
+      <a href="thedata2014.html">2014-2015</a>
+    </li>
+    <li>
+      <a href="thedata2015.html">2015-2016</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    NBA Predictions
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="nbapredictions.html">Predictions</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="nbamodel4.html">NEW Model4</a>
+    </li>
+    <li>
+      <a href="nbamodel3.html">Model3</a>
+    </li>
+    <li>
+      <a href="nbaallpos.html">Older Models</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="nbacenters.html">NBA Centers</a>
+    </li>
+    <li>
+      <a href="nbapointguards.html">NBA Point Guards</a>
+    </li>
+    <li>
+      <a href="nbashootingguards.html">NBA Shooting Guards</a>
+    </li>
+    <li>
+      <a href="nbasmallforwards.html">NBA Small Forwards</a>
+    </li>
+    <li>
+      <a href="nbapowerforwards.html">NBA Power Forwards</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="salarycomparisons.html">Salary Comparisons</a>
+</li>
+<li>
+  <a href="refs.html">Refs</a>
+</li>
+<li>
+  <a href="stepbystep.html">Step-by-Steps</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Step-by-Step Instructions</h1>
+<h4 class="author"><em>Dylan Blechner</em></h4>
+<h4 class="date"><em>December 11, 2016</em></h4>
+
+</div>
+
+
+<div id="so-far" class="section level2">
+<h2>So Far</h2>
+<p>So far, we have successfully read in ten years of NBA data from <a href="basketball-reference.com" class="uri">basketball-reference.com</a>. My dataset now includes player data for each year including Career totals, Playoff data, and Career Playoff totals data. Each player data row also includes the Salary for the year following the data. This is so I can try to understand what factors from this year contribute to the salary the player gets paid in the following year.</p>
+<p>Grabbing the data has been one of the more difficult aspects of the project so far and has taken up most of our time.</p>
+</div>
+<div id="r-coding-script-examples" class="section level2">
+<h2>R Coding Script Examples</h2>
+<div id="nba-dataset-for-2016" class="section level3">
+<h3>NBA Dataset for 2016</h3>
+<p>Here I show the first nine rows and ten columns of the data table, using the <strong>select</strong> command:</p>
+<pre class="r"><code>NBAData2016 %&gt;% select(1:9) %&gt;% tbl_df</code></pre>
+<pre><code>## # A tibble: 366 × 9
+##      No.          Player  Pos.x       Ht    Wt         Birth.Date     X.
+##    &lt;int&gt;          &lt;fctr&gt; &lt;fctr&gt;    &lt;dbl&gt; &lt;int&gt;             &lt;fctr&gt; &lt;fctr&gt;
+## 1      0    Aaron Brooks     PG 6.000000   161   January 14, 1985     us
+## 2      0    Aaron Gordon     SF 6.750000   220 September 16, 1995     us
+## 3      9  Aaron Harrison     SG 6.500000   210   October 28, 1994     us
+## 4     33   Adreian Payne     PF 6.833333   237  February 19, 1991     us
+## 5      9   Alan Anderson     SF 6.500000   220   October 16, 1982     us
+## 6     15   Alan Williams     PF 6.666667   260   January 28, 1993     us
+## 7     10      Alec Burks     SG 6.500000   214      July 20, 1991     us
+## 8     42   Alexis Ajinca      C 7.166667   248        May 6, 1988     fr
+## 9     21        Alex Len      C 7.083333   260      June 16, 1993     ua
+## 10     8 Al-Farouq Aminu     SF 6.750000   220 September 21, 1990     us
+## # ... with 356 more rows, and 2 more variables: Exp &lt;int&gt;, College &lt;fctr&gt;</code></pre>
+<p>The 2016 data set has 366 rows and 111 columns.</p>
+
+</div>
+<div id="regression-analysis-of-the-2016-nba-data-by-player-position" class="section level3">
+<h3>Regression Analysis of the 2016 NBA Data by Player Position</h3>
+<p>Here is an example script I am working on to calculate a multiple linear regression of Salary vs. many other statistics.</p>
+<pre class="r"><code>Player_Salary16 &lt;- 
+  read.csv(&quot;/home/steve/R/R Projects/NBA Salaries BBRef/Data/2016BBRef.csv&quot;, check.names = FALSE)
+
+#Sample Regression for Each Position#
+#PG#
+subset(Player_Salary16, Pos.x == &quot;PG&quot;)
+subset(Player_Salary16, Pos.x == &quot;PG&quot;) -&gt; PG
+PGMod &lt;- lm(data = PG, Salary ~ `Ht` + `Wt` + `Age` + `G` + `GS` + `MP` + `FG` + `FGA` + 
+              `FG%` + `3P` + `3PA` + `3P%` + `2P` + `2PA` + `2P%` + `eFG%` + `FT` + `FTA` + 
+              `FT%` + `ORB` + `DRB` + `TRB` + `AST` + `STL` + `BLK` + `TOV` + `PF` + `PTS` +
+              `CareerG` + `CareerGS` + `CareerMP` + `CareerFG` + `CareerFGA` + `Career3P` + 
+              `Career3PA` + `Career2P` + `Career2PA` + `CareerFT` + `CareerFTA` + `CareerORB` + 
+              `CareerDRB` + `CareerTRB` + `CareerAST` + `CareerSTL` + `CareerBLK` + `CareerTOV` + 
+              `CareerPF` + `CareerPTS` + `PlayoffG` + `PlayoffGS` + `PlayoffMP` + `PlayoffFG` + 
+              `PlayoffFGA` + `PlayoffFG%` + `Playoff3P` + `Playoff3PA` + `Playoff3P%` + 
+              `Playoff2P` + `Playoff2PA` + `Playoff2P%` + `PlayoffeFG%` + `PlayoffFT` + 
+              `PlayoffFTA` + `PlayoffFT%` + `PlayoffORB` + `PlayoffDRB` + `PlayoffTRB` + 
+              `PlayoffAST` + `PlayoffSTL` + `PlayoffBLK` + `PlayoffTOV` + `PlayoffPF` + 
+              `PlayoffPTS` + `CareerPlayoffG` + `CareerPlayoffGS` + `CareerPlayoffMP` + 
+              `CareerPlayoffFG` + `CareerPlayoffFGA` + `CareerPlayoff3P` + `CareerPlayoff3PA` + 
+              `CareerPlayoff2P` + `CareerPlayoff2PA` + `CareerPlayoffFT` + `CareerPlayoffFTA` + 
+              `CareerPlayoffORB` + `CareerPlayoffDRB` + `CareerPlayoffTRB` + `CareerPlayoffAST` + 
+              `CareerPlayoffSTL` + `CareerPlayoffBLK` + `CareerPlayoffTOV` + `CareerPlayoffPF` + 
+              `CareerPlayoffPTS`)
+summary(PGMod)
+anova(PGMod)
+
+#SG#
+subset(Player_Salary16, Pos.x == &quot;SG&quot;)
+subset(Player_Salary16, Pos.x == &quot;SG&quot;) -&gt; SG
+SGMod &lt;- lm(data = SG, Salary ~ `Ht` + `Wt` + `Age` + `G` + `GS` + `MP` + `FG` + `FGA` + 
+              `FG%` + `3P` + `3PA` + `3P%` + `2P` + `2PA` + `2P%` + `eFG%` + `FT` + `FTA` + 
+              `FT%` + `ORB` + `DRB` + `TRB` + `AST` + `STL` + `BLK` + `TOV` + `PF` + `PTS` +
+              `CareerG` + `CareerGS` + `CareerMP` + `CareerFG` + `CareerFGA` + `Career3P` + 
+              `Career3PA` + `Career2P` + `Career2PA` + `CareerFT` + `CareerFTA` + `CareerORB` + 
+              `CareerDRB` + `CareerTRB` + `CareerAST` + `CareerSTL` + `CareerBLK` + `CareerTOV` + 
+              `CareerPF` + `CareerPTS` + `PlayoffG` + `PlayoffGS` + `PlayoffMP` + `PlayoffFG` + 
+              `PlayoffFGA` + `PlayoffFG%` + `Playoff3P` + `Playoff3PA` + `Playoff3P%` + 
+              `Playoff2P` + `Playoff2PA` + `Playoff2P%` + `PlayoffeFG%` + `PlayoffFT` + 
+              `PlayoffFTA` + `PlayoffFT%` + `PlayoffORB` + `PlayoffDRB` + `PlayoffTRB` + 
+              `PlayoffAST` + `PlayoffSTL` + `PlayoffBLK` + `PlayoffTOV` + `PlayoffPF` + 
+              `PlayoffPTS` + `CareerPlayoffG` + `CareerPlayoffGS` + `CareerPlayoffMP` + 
+              `CareerPlayoffFG` + `CareerPlayoffFGA` + `CareerPlayoff3P` + `CareerPlayoff3PA` + 
+              `CareerPlayoff2P` + `CareerPlayoff2PA` + `CareerPlayoffFT` + `CareerPlayoffFTA` + 
+              `CareerPlayoffORB` + `CareerPlayoffDRB` + `CareerPlayoffTRB` + `CareerPlayoffAST` + 
+              `CareerPlayoffSTL` + `CareerPlayoffBLK` + `CareerPlayoffTOV` + `CareerPlayoffPF` + 
+              `CareerPlayoffPTS`)
+summary(SGMod)
+anova(SGMod)
+
+#SF#
+subset(Player_Salary16, Pos.x == &quot;SF&quot;)
+subset(Player_Salary16, Pos.x == &quot;SF&quot;) -&gt; SF
+SFMod &lt;- lm(data = SF, Salary ~ `Ht` + `Wt` + `Age` + `G` + `GS` + `MP` + `FG` + `FGA` + 
+              `FG%` + `3P` + `3PA` + `3P%` + `2P` + `2PA` + `2P%` + `eFG%` + `FT` + `FTA` + 
+              `FT%` + `ORB` + `DRB` + `TRB` + `AST` + `STL` + `BLK` + `TOV` + `PF` + `PTS` +
+              `CareerG` + `CareerGS` + `CareerMP` + `CareerFG` + `CareerFGA` + `Career3P` + 
+              `Career3PA` + `Career2P` + `Career2PA` + `CareerFT` + `CareerFTA` + `CareerORB` + 
+              `CareerDRB` + `CareerTRB` + `CareerAST` + `CareerSTL` + `CareerBLK` + `CareerTOV` + 
+              `CareerPF` + `CareerPTS` + `PlayoffG` + `PlayoffGS` + `PlayoffMP` + `PlayoffFG` + 
+              `PlayoffFGA` + `PlayoffFG%` + `Playoff3P` + `Playoff3PA` + `Playoff3P%` + 
+              `Playoff2P` + `Playoff2PA` + `Playoff2P%` + `PlayoffeFG%` + `PlayoffFT` + 
+              `PlayoffFTA` + `PlayoffFT%` + `PlayoffORB` + `PlayoffDRB` + `PlayoffTRB` + 
+              `PlayoffAST` + `PlayoffSTL` + `PlayoffBLK` + `PlayoffTOV` + `PlayoffPF` + 
+              `PlayoffPTS` + `CareerPlayoffG` + `CareerPlayoffGS` + `CareerPlayoffMP` + 
+              `CareerPlayoffFG` + `CareerPlayoffFGA` + `CareerPlayoff3P` + `CareerPlayoff3PA` + 
+              `CareerPlayoff2P` + `CareerPlayoff2PA` + `CareerPlayoffFT` + `CareerPlayoffFTA` + 
+              `CareerPlayoffORB` + `CareerPlayoffDRB` + `CareerPlayoffTRB` + `CareerPlayoffAST` + 
+              `CareerPlayoffSTL` + `CareerPlayoffBLK` + `CareerPlayoffTOV` + `CareerPlayoffPF` + 
+              `CareerPlayoffPTS`)
+summary(SFMod)
+anova(SFMod)
+
+#PF#
+subset(Player_Salary16, Pos.x == &quot;PF&quot;)
+subset(Player_Salary16, Pos.x == &quot;PF&quot;) -&gt; PF
+PFMod &lt;- lm(data = PF, Salary ~ `Ht` + `Wt` + `Age` + `G` + `GS` + `MP` + `FG` + `FGA` + 
+              `FG%` + `3P` + `3PA` + `3P%` + `2P` + `2PA` + `2P%` + `eFG%` + `FT` + `FTA` + 
+              `FT%` + `ORB` + `DRB` + `TRB` + `AST` + `STL` + `BLK` + `TOV` + `PF` + `PTS` +
+              `CareerG` + `CareerGS` + `CareerMP` + `CareerFG` + `CareerFGA` + `Career3P` + 
+              `Career3PA` + `Career2P` + `Career2PA` + `CareerFT` + `CareerFTA` + `CareerORB` + 
+              `CareerDRB` + `CareerTRB` + `CareerAST` + `CareerSTL` + `CareerBLK` + `CareerTOV` + 
+              `CareerPF` + `CareerPTS` + `PlayoffG` + `PlayoffGS` + `PlayoffMP` + `PlayoffFG` + 
+              `PlayoffFGA` + `PlayoffFG%` + `Playoff3P` + `Playoff3PA` + `Playoff3P%` + 
+              `Playoff2P` + `Playoff2PA` + `Playoff2P%` + `PlayoffeFG%` + `PlayoffFT` + 
+              `PlayoffFTA` + `PlayoffFT%` + `PlayoffORB` + `PlayoffDRB` + `PlayoffTRB` + 
+              `PlayoffAST` + `PlayoffSTL` + `PlayoffBLK` + `PlayoffTOV` + `PlayoffPF` + 
+              `PlayoffPTS` + `CareerPlayoffG` + `CareerPlayoffGS` + `CareerPlayoffMP` + 
+              `CareerPlayoffFG` + `CareerPlayoffFGA` + `CareerPlayoff3P` + `CareerPlayoff3PA` + 
+              `CareerPlayoff2P` + `CareerPlayoff2PA` + `CareerPlayoffFT` + `CareerPlayoffFTA` + 
+              `CareerPlayoffORB` + `CareerPlayoffDRB` + `CareerPlayoffTRB` + `CareerPlayoffAST` + 
+              `CareerPlayoffSTL` + `CareerPlayoffBLK` + `CareerPlayoffTOV` + `CareerPlayoffPF` + 
+              `CareerPlayoffPTS`)
+summary(PFMod)
+anova(PFMod)
+
+#C#
+subset(Player_Salary16, Pos.x == &quot;C&quot;)
+subset(Player_Salary16, Pos.x == &quot;C&quot;) -&gt; C
+CMod &lt;- lm(data = C, Salary ~ `Ht` + `Wt` + `Age` + `G` + `GS` + `MP` + `FG` + `FGA` + 
+             `FG%` + `3P` + `3PA` + `3P%` + `2P` + `2PA` + `2P%` + `eFG%` + `FT` + `FTA` + 
+             `FT%` + `ORB` + `DRB` + `TRB` + `AST` + `STL` + `BLK` + `TOV` + `PF` + `PTS` +
+             `CareerG` + `CareerGS` + `CareerMP` + `CareerFG` + `CareerFGA` + `Career3P` + 
+             `Career3PA` + `Career2P` + `Career2PA` + `CareerFT` + `CareerFTA` + `CareerORB` + 
+             `CareerDRB` + `CareerTRB` + `CareerAST` + `CareerSTL` + `CareerBLK` + `CareerTOV` + 
+             `CareerPF` + `CareerPTS` + `PlayoffG` + `PlayoffGS` + `PlayoffMP` + `PlayoffFG` + 
+             `PlayoffFGA` + `PlayoffFG%` + `Playoff3P` + `Playoff3PA` + `Playoff3P%` + 
+             `Playoff2P` + `Playoff2PA` + `Playoff2P%` + `PlayoffeFG%` + `PlayoffFT` + 
+             `PlayoffFTA` + `PlayoffFT%` + `PlayoffORB` + `PlayoffDRB` + `PlayoffTRB` + 
+             `PlayoffAST` + `PlayoffSTL` + `PlayoffBLK` + `PlayoffTOV` + `PlayoffPF` + 
+             `PlayoffPTS` + `CareerPlayoffG` + `CareerPlayoffGS` + `CareerPlayoffMP` + 
+             `CareerPlayoffFG` + `CareerPlayoffFGA` + `CareerPlayoff3P` + `CareerPlayoff3PA` + 
+             `CareerPlayoff2P` + `CareerPlayoff2PA` + `CareerPlayoffFT` + `CareerPlayoffFTA` + 
+             `CareerPlayoffORB` + `CareerPlayoffDRB` + `CareerPlayoffTRB` + `CareerPlayoffAST` + 
+             `CareerPlayoffSTL` + `CareerPlayoffBLK` + `CareerPlayoffTOV` + `CareerPlayoffPF` + 
+             `CareerPlayoffPTS`)
+summary(CMod)
+anova(CMod)</code></pre>
+
+</div>
+</div>
+<div id="r-plot-examples-of-2016-nba-data" class="section level2">
+<h2>R Plot Examples of 2016 NBA Data</h2>
+<p>A histogram of salaries for the 2016 NBA Season, for each of the 5 positions:</p>
+<ul>
+<li>C = Center</li>
+<li>PF = Power Forward</li>
+<li>PG = Point Guard</li>
+<li>SF = Small Forward</li>
+<li>SG = Shooting Guard</li>
+</ul>
+<p>The width of each salary bin is $1,000,000.</p>
+<p><img src="stepbystep_files/figure-html/histogram-1.png" width="672" /></p>
+<p>For the 2016-2017 season, the salary distribution for each position is skewed towards lower salaries, with outliers at the higher end. For example, LeBron James, a small forward, is the extreme value for the above <strong>SF</strong> plot at ~ $31 million.</p>
+<p>I can see that by taking the 2016 dataset, then filtering it by the player, LeBron James, then selecting only the columns of interest (Player name, Postion, Salary):</p>
+<pre class="r"><code>NBAData2016 %&gt;% filter(Player==&quot;LeBron James&quot;) %&gt;% select(Player, Pos.x, Salary)</code></pre>
+<pre><code>##         Player Pos.x   Salary
+## 1 LeBron James    SF 30963450</code></pre>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
