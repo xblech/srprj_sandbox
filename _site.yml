@@ -59,6 +59,13 @@ navbar:
       href: refs.html
     - text: "Step-by-Steps"
       href: stepbystep.html
+      menu:
+        - text: "Step-by-Steps"
+          href: stepbystep.html
+        - text: "--------------"
+        - text: "Portfolio"
+          href: Portfolio_thestat.html
+
 output:
   html_document:
 #    theme:  default

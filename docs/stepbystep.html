@@ -362,8 +362,21 @@ div.tocify {
 <li>
   <a href="refs.html">Refs</a>
 </li>
-<li>
-  <a href="stepbystep.html">Step-by-Steps</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Step-by-Steps
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="stepbystep.html">Step-by-Steps</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="Portfolio_thestat.html">Portfolio</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -396,7 +409,7 @@ div.tocify {
 <p>Here I show the first nine rows and ten columns of the data table, using the <strong>select</strong> command:</p>
 <pre class="r"><code>NBAData2016 %&gt;% select(1:9) %&gt;% tbl_df</code></pre>
 <pre><code>## # A tibble: 366 × 9
-##      No.          Player  Pos.x       Ht    Wt         Birth.Date     X.
+##      No.          Player  Pos.x       Ht    Wt         Birth.Date  Var.7
 ##    &lt;int&gt;          &lt;fctr&gt; &lt;fctr&gt;    &lt;dbl&gt; &lt;int&gt;             &lt;fctr&gt; &lt;fctr&gt;
 ## 1      0    Aaron Brooks     PG 6.000000   161   January 14, 1985     us
 ## 2      0    Aaron Gordon     SF 6.750000   220 September 16, 1995     us

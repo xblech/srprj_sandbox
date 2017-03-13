@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="Dylan Blechner" />
+
+<meta name="date" content="2017-03-10" />
+
+<title>2016 - 2017 NBA Small Forwards</title>
+
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<script src="site_libs/htmlwidgets-0.8/htmlwidgets.js"></script>
+<script src="site_libs/datatables-binding-0.2/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.12/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.12/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/dt-ext-fixedcolumns-1.10.12/css/fixedColumns.dataTables.min.css" rel="stylesheet" />
+<script src="site_libs/dt-ext-fixedcolumns-1.10.12/js/dataTables.fixedColumns.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 45px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+.section h2 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h3 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h4 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h5 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h6 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Senior Project - Dylan Blechner</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="thestat.html">The Statistic</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    The Data
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="thedata.html">The Data</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="thedata2007.html">2007-2008</a>
+    </li>
+    <li>
+      <a href="thedata2008.html">2008-2009</a>
+    </li>
+    <li>
+      <a href="thedata2009.html">2009-2010</a>
+    </li>
+    <li>
+      <a href="thedata2010.html">2010-2011</a>
+    </li>
+    <li>
+      <a href="thedata2011.html">2011-2012</a>
+    </li>
+    <li>
+      <a href="thedata2012.html">2012-2013</a>
+    </li>
+    <li>
+      <a href="thedata2013.html">2013-2014</a>
+    </li>
+    <li>
+      <a href="thedata2014.html">2014-2015</a>
+    </li>
+    <li>
+      <a href="thedata2015.html">2015-2016</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    NBA Predictions
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="nbapredictions.html">Predictions</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="nbamodel4.html">NEW Model4</a>
+    </li>
+    <li>
+      <a href="nbamodel3.html">Model3</a>
+    </li>
+    <li>
+      <a href="nbaallpos.html">Older Models</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="nbacenters.html">NBA Centers</a>
+    </li>
+    <li>
+      <a href="nbapointguards.html">NBA Point Guards</a>
+    </li>
+    <li>
+      <a href="nbashootingguards.html">NBA Shooting Guards</a>
+    </li>
+    <li>
+      <a href="nbasmallforwards.html">NBA Small Forwards</a>
+    </li>
+    <li>
+      <a href="nbapowerforwards.html">NBA Power Forwards</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="salarycomparisons.html">Salary Comparisons</a>
+</li>
+<li>
+  <a href="refs.html">Refs</a>
+</li>
+<li>
+  <a href="stepbystep.html">Step-by-Steps</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">2016 - 2017 NBA Small Forwards</h1>
+<h4 class="author"><em>Dylan Blechner</em></h4>
+<h4 class="date"><em>March 10, 2017</em></h4>
+
+</div>
+
+
+<p><br><br></p>
+<div id="multiple-linear-regression-of-the-nba-small-forward-position" class="section level3">
+<h3>MULTIPLE LINEAR REGRESSION OF THE NBA SMALL FORWARD POSITION</h3>
+<p><br></p>
+<table style="text-align:center">
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+Salary
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Ht
+</td>
+<td>
+2,209,005.000<sup>**</sup> (1,039,068.000)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+FG
+</td>
+<td>
+-22,393.150<sup>***</sup> (7,129.140)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+FGA
+</td>
+<td>
+11,988.490<sup>***</sup> (3,460.276)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+ThreePtAttmpt
+</td>
+<td>
+-5,006.499 (3,110.003)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+FT
+</td>
+<td>
+-10,516.780<sup>**</sup> (4,164.066)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+PF
+</td>
+<td>
+-8,141.760<sup>**</sup> (3,608.025)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Last2YrsG
+</td>
+<td>
+-34,478.020<sup>***</sup> (5,370.025)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Last2Yrs3P
+</td>
+<td>
+36,671.540<sup>***</sup> (11,316.400)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Last2Yrs3PA
+</td>
+<td>
+-9,068.217<sup>**</sup> (4,573.576)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Last2YrsFT
+</td>
+<td>
+8,258.175<sup>***</sup> (2,303.546)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Last2YrsORB
+</td>
+<td>
+11,930.600<sup>***</sup> (2,778.413)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Last2YrsAST
+</td>
+<td>
+6,513.947<sup>***</sup> (1,732.348)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Last2YrsTOV
+</td>
+<td>
+10,048.390<sup>**</sup> (4,019.474)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+CareerPlayoffMP
+</td>
+<td>
+1,433.770<sup>**</sup> (615.231)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+CareerPlayoffFG
+</td>
+<td>
+39,368.230<sup>***</sup> (10,240.740)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+CareerPlayoffFGA
+</td>
+<td>
+-12,348.370<sup>**</sup> (4,826.167)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+CareerPlayoffFT
+</td>
+<td>
+8,707.266<sup>**</sup> (4,411.802)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+CareerPlayoffDRB
+</td>
+<td>
+-11,922.240<sup>***</sup> (3,602.973)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+CareerPlayoffAST
+</td>
+<td>
+-20,312.980<sup>***</sup> (4,468.083)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+-11,684,051.000<sup>*</sup> (6,946,373.000)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+629
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.690
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.680
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+2,715,461.000 (df = 609)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+71.288<sup>***</sup> (df = 19; 609)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td style="text-align:right">
+<sup><em></sup>p&lt;0.1; <sup><strong></sup>p&lt;0.05; <sup></strong></em></sup>p&lt;0.01
+</td>
+</tr>
+</table>
+<p><br><br> <br><br></p>
+</div>
+<div id="predictions-of-the-nba-small-forward-position" class="section level3">
+<h3>PREDICTIONS OF THE NBA SMALL FORWARD POSITION</h3>
+<p><br> <div id="htmlwidget-b6252c00da4eaab643a4" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b6252c00da4eaab643a4">{"x":{"filter":"none","extensions":["FixedColumns"],"data":[[19855522.8613056,15371807.7801064,14626695.1302394,11857126.209375,11390406.2856262,11240207.1376126,10677673.3540921,9930059.88201021,9801760.05070032,9082672.80163715,8613186.77751827,8593162.03492743,7895684.18320587,7440019.57932539,7287967.83898543,7149632.14314063,6869273.57977667,6654511.59143855,6322877.1607222,6207204.79278085,5825419.79408612,5613969.63467656,5084830.76364248,4907153.14760787,4708355.27621296,4626246.09999827,4539506.52730372,4162278.85658799,4096317.58374251,4037398.19628962,3971198.60325537,3809949.30088082,3385571.88551282,3294836.32002976,3256196.71058817,3233163.70393824,3184734.41018383,3149332.57725123,3123297.41308445,3028710.39142818,2944273.59895833,2916531.24281255,2804032.53227395,2779577.03108616,2648585.76631872,2611851.82430773,2478420.52460214,2434860.26794549,2429156.38384958,2419750.34859603,2177528.58807603,2088928.2874573,2040690.3046444,1963275.27470607,1930081.98597034,1917516.16438445,1891057.83301697,1875764.84275171,1849717.14378122,1604317.24002148,1489773.07541858,1472278.88300408,1257501.17939921,1233961.06398254,1180309.50030735,1121118.03539332,845921.712308902,500121.615803665,459619.154792577,383781.612364191],[30963450,26540100,24559380,11000000,17552209,16073140,17638063,13333333,18000000,3500000,7806971,6006600,14200000,18314532,1015696,22116750,15000000,22116750,15050000,4625000,2500000,5300000,7600000,4837500,6125000,13000000,7680965,3000000,4583450,11241218,3573020,5374320,1403611,1551659,10000000,1551659,1315448,980431,1720560,2969880,1589640,11131368,3333333,2898000,3046299,4351320,1395600,5893981,5628000,2250000,2593440,1227000,980431,2368327,3909840,15730338,6286408,2128920,4598000,4837500,3850000,8988764,1514160,2483040,2255644,1050500,2006640,3500000,2978250,2183072],["LeBron James","Kevin Durant","Carmelo Anthony","Joe Johnson","Jimmy Butler","Gordon Hayward","Kawhi Leonard","Rudy Gay","Luol Deng","Paul Pierce","Trevor Ariza","Andrew Wiggins","DeMarre Carroll","Paul George","Robert Covington","Chandler Parsons","Jeff Green","Harrison Barnes","Danilo Gallinari","Marcus Morris","Richard Jefferson","P.J. Tucker","Corey Brewer","Mike Dunleavy","Matt Barnes","Michael Kidd-Gilchrist","Al-Farouq Aminu","Omri Casspi","C.J. Miles","Solomon Hill","Bojan Bogdanovic","Jabari Parker","Michael Beasley","Metta World Peace","Terrence Ross","James Jones","Alan Anderson","Jerami Grant","Sam Dekker","Stanley Johnson","Bruno Caboclo","Andre Iguodala","K.J. McDaniels","James Ennis","Shabazz Muhammad","Aaron Gordon","Rondae Hollis-Jefferson","Otto Porter","Wesley Johnson","Joe Ingles","Justise Winslow","Luke Babbitt","Damjan Rudez","Tony Snell","Mario Hezonja","Kent Bazemore","Jae Crowder","T.J. Warren","Derrick Williams","Kyle Singler","Thabo Sefolosha","Maurice Harkless","Justin Anderson","Doug McDermott","Reggie Bullock","Glenn Robinson III","Kelly Oubre Jr.","Mike Miller","Dante Cunningham","Andre Roberson"],["SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF","SF"],[6.66666666666667,6.75,6.66666666666667,6.58333333333333,6.58333333333333,6.66666666666667,6.58333333333333,6.66666666666667,6.75,6.58333333333333,6.66666666666667,6.66666666666667,6.66666666666667,6.75,6.75,6.83333333333333,6.75,6.66666666666667,6.83333333333333,6.75,6.58333333333333,6.5,6.75,6.75,6.58333333333333,6.58333333333333,6.75,6.75,6.5,6.58333333333333,6.66666666666667,6.66666666666667,6.75,6.5,6.58333333333333,6.66666666666667,6.5,6.66666666666667,6.75,6.58333333333333,6.75,6.5,6.5,6.58333333333333,6.5,6.75,6.58333333333333,6.66666666666667,6.58333333333333,6.66666666666667,6.58333333333333,6.75,6.83333333333333,6.58333333333333,6.66666666666667,6.41666666666667,6.5,6.66666666666667,6.66666666666667,6.66666666666667,6.58333333333333,6.75,6.5,6.66666666666667,6.58333333333333,6.5,6.58333333333333,6.66666666666667,6.66666666666667,6.58333333333333],[250,240,240,240,220,226,230,230,220,235,215,199,215,220,215,230,235,210,225,235,233,245,186,230,226,232,220,225,225,225,216,250,235,260,206,218,220,210,230,245,218,215,205,210,223,220,220,198,215,226,225,225,228,200,215,201,235,230,240,228,220,215,228,225,205,222,205,218,230,210],["December 30, 1984","September 29, 1988","May 29, 1984","June 29, 1981","September 14, 1989","March 23, 1990","June 29, 1991","August 17, 1986","April 16, 1985","October 13, 1977","June 30, 1985","February 23, 1995","July 27, 1986","May 2, 1990","December 14, 1990","October 25, 1988","August 28, 1986","May 30, 1992","August 8, 1988","September 2, 1989","June 21, 1980","May 5, 1985","March 5, 1986","September 15, 1980","March 9, 1980","September 26, 1993","September 21, 1990","June 22, 1988","April 18, 1987","March 18, 1991","April 18, 1989","March 15, 1995","January 9, 1989","November 13, 1979","February 5, 1991","October 4, 1980","October 16, 1982","March 12, 1994","May 6, 1994","May 29, 1996","September 21, 1995","January 28, 1984","February 9, 1993","July 1, 1990","November 13, 1992","September 16, 1995","January 3, 1995","June 3, 1993","July 11, 1987","October 2, 1987","March 26, 1996","June 20, 1989","June 17, 1986","November 10, 1991","February 25, 1995","July 1, 1989","July 6, 1990","September 5, 1993","May 25, 1991","May 4, 1988","May 2, 1984","May 11, 1993","November 19, 1993","January 3, 1992","March 16, 1991","January 8, 1994","December 9, 1995","February 19, 1980","April 22, 1987","December 4, 1991"],["us","us","us","us","us","us","us","us","ss","us","us","ca","us","us","us","us","us","us","it","us","us","us","us","us","us","us","us","il","us","us","ba","us","us","us","us","us","us","us","us","us","br","us","us","us","us","us","us","us","us","au","us","us","hr","us","hr","us","us","us","us","us","ch","us","us","us","us","us","us","us","us","us"],[13,9,13,15,5,6,5,10,12,18,12,2,7,6,3,5,8,4,7,5,15,5,9,14,13,4,6,7,11,3,2,2,8,16,4,13,7,2,1,1,2,12,2,2,3,2,1,3,6,2,1,6,2,3,1,4,4,2,5,4,10,4,1,2,3,2,1,16,7,3],["","University of Texas at Austin","Syracuse University","University of Arkansas","Marquette University","Butler University","San Diego State University","University of Connecticut","Duke University","University of Kansas","University of California, Los Angeles","University of Kansas","University of Missouri","California State University, Fresno","Tennessee State University","University of Florida","Georgetown University","University of North Carolina","","University of Kansas","University of Arizona","University of Texas at Austin","University of Florida","Duke University","University of California, Los Angeles","University of Kentucky","Wake Forest University","","","University of Arizona","","Duke University","Kansas State University","St. John's University","University of Washington","University of Miami","Michigan State University","Syracuse University","University of Wisconsin","University of Arizona","","University of Arizona","Clemson University","California State University, Long Beach","University of California, Los Angeles","University of Arizona","University of Arizona","Georgetown University","Syracuse University","","Duke University","University of Nevada, Reno","","University of New Mexico","","Old Dominion University","Marquette University","North Carolina State University","University of Arizona","Duke University","","St. John's University","University of Virginia","Creighton University","University of North Carolina","University of Michigan","University of Kansas","University of Florida","Villanova University","University of Colorado"],["http://www.basketball-reference.com/players/j/jamesle01.html","http://www.basketball-reference.com/players/d/duranke01.html","http://www.basketball-reference.com/players/a/anthoca01.html","http://www.basketball-reference.com/players/j/johnsjo02.html","http://www.basketball-reference.com/players/b/butleji01.html","http://www.basketball-reference.com/players/h/haywago01.html","http://www.basketball-reference.com/players/l/leonaka01.html","http://www.basketball-reference.com/players/g/gayru01.html","http://www.basketball-reference.com/players/d/denglu01.html","http://www.basketball-reference.com/players/p/piercpa01.html","http://www.basketball-reference.com/players/a/arizatr01.html","http://www.basketball-reference.com/players/w/wiggian01.html","http://www.basketball-reference.com/players/c/carrode01.html","http://www.basketball-reference.com/players/g/georgpa01.html","http://www.basketball-reference.com/players/c/covinro01.html","http://www.basketball-reference.com/players/p/parsoch01.html","http://www.basketball-reference.com/players/g/greenje02.html","http://www.basketball-reference.com/players/b/barneha02.html","http://www.basketball-reference.com/players/g/gallida01.html","http://www.basketball-reference.com/players/m/morrima03.html","http://www.basketball-reference.com/players/j/jefferi01.html","http://www.basketball-reference.com/players/t/tuckepj01.html","http://www.basketball-reference.com/players/b/breweco01.html","http://www.basketball-reference.com/players/d/dunlemi02.html","http://www.basketball-reference.com/players/b/barnema02.html","http://www.basketball-reference.com/players/k/kiddgmi01.html","http://www.basketball-reference.com/players/a/aminual01.html","http://www.basketball-reference.com/players/c/casspom01.html","http://www.basketball-reference.com/players/m/milescj01.html","http://www.basketball-reference.com/players/h/hillso01.html","http://www.basketball-reference.com/players/b/bogdabo02.html","http://www.basketball-reference.com/players/p/parkeja01.html","http://www.basketball-reference.com/players/b/beaslmi01.html","http://www.basketball-reference.com/players/a/artesro01.html","http://www.basketball-reference.com/players/r/rosste01.html","http://www.basketball-reference.com/players/j/jonesja02.html","http://www.basketball-reference.com/players/a/anderal01.html","http://www.basketball-reference.com/players/g/grantje01.html","http://www.basketball-reference.com/players/d/dekkesa01.html","http://www.basketball-reference.com/players/j/johnsst04.html","http://www.basketball-reference.com/players/c/cabocbr01.html","http://www.basketball-reference.com/players/i/iguodan01.html","http://www.basketball-reference.com/players/m/mcdankj01.html","http://www.basketball-reference.com/players/e/ennisja01.html","http://www.basketball-reference.com/players/m/muhamsh01.html","http://www.basketball-reference.com/players/g/gordoaa01.html","http://www.basketball-reference.com/players/h/holliro01.html","http://www.basketball-reference.com/players/p/porteot01.html","http://www.basketball-reference.com/players/j/johnswe01.html","http://www.basketball-reference.com/players/i/inglejo01.html","http://www.basketball-reference.com/players/w/winslju01.html","http://www.basketball-reference.com/players/b/babbilu01.html","http://www.basketball-reference.com/players/r/rudezda01.html","http://www.basketball-reference.com/players/s/snellto01.html","http://www.basketball-reference.com/players/h/hezonma01.html","http://www.basketball-reference.com/players/b/bazemke01.html","http://www.basketball-reference.com/players/c/crowdja01.html","http://www.basketball-reference.com/players/w/warretj01.html","http://www.basketball-reference.com/players/w/willide02.html","http://www.basketball-reference.com/players/s/singlky01.html","http://www.basketball-reference.com/players/s/sefolth01.html","http://www.basketball-reference.com/players/h/harklma01.html","http://www.basketball-reference.com/players/a/anderju01.html","http://www.basketball-reference.com/players/m/mcderdo01.html","http://www.basketball-reference.com/players/b/bullore01.html","http://www.basketball-reference.com/players/r/robingl02.html","http://www.basketball-reference.com/players/o/oubreke01.html","http://www.basketball-reference.com/players/m/millemi01.html","http://www.basketball-reference.com/players/c/cunnida01.html","http://www.basketball-reference.com/players/r/roberan03.html"],["2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16","2015-16"],[31,27,31,34,26,25,24,29,30,38,30,20,29,25,25,27,29,23,27,26,35,30,29,35,35,22,25,27,28,24,26,20,27,36,24,35,33,21,21,19,20,32,22,25,23,20,21,22,28,28,19,26,29,24,20,26,25,22,24,27,31,22,22,24,24,22,20,35,28,24],["CLE","OKC","NYK","TOT","CHI","UTA","SAS","SAC","MIA","LAC","HOU","MIN","TOR","IND","PHI","DAL","TOT","GSW","DEN","DET","CLE","PHO","HOU","CHI","MEM","CHO","POR","SAC","IND","IND","BRK","MIL","HOU","LAL","TOR","CLE","WAS","PHI","HOU","DET","TOR","GSW","HOU","TOT","MIN","ORL","BRK","WAS","LAC","UTA","MIA","NOP","MIN","CHI","ORL","ATL","BOS","PHO","NYK","OKC","ATL","POR","DAL","CHI","DET","IND","WAS","DEN","NOP","OKC"],[76,72,72,81,67,80,72,70,74,68,81,81,26,81,67,61,80,66,53,80,74,82,82,31,76,7,82,69,64,59,79,76,20,35,73,48,13,77,3,73,6,65,37,22,82,78,29,75,80,81,78,47,33,64,79,75,73,47,80,68,75,78,55,81,37,45,63,47,80,70],[76,72,72,81,67,80,72,70,73,38,81,81,22,81,49,51,41,59,53,80,5,80,12,30,45,7,82,21,24,3,39,72,0,5,7,0,0,52,0,6,1,1,1,5,0,37,17,73,9,2,8,13,0,33,9,68,73,4,9,2,11,14,9,4,0,4,9,2,46,70],[2709,2578,2530,2703,2474,2893,2380,2379,2394,1231,2859,2845,786,2819,1903,1799,2253,2042,1839,2856,1326,2540,1669,703,2190,205,2341,1880,1464,866,2115,2408,363,590,1747,463,192,2066,6,1687,43,1732,235,329,1682,1863,615,2276,1666,1241,2232,845,277,1301,1413,2083,2308,1070,1435,977,1758,1457,647,1861,429,508,671,373,1971,1553],[737,698,567,377,470,521,551,466,339,144,357,594,105,605,274,320,354,295,287,410,143,239,212,77,264,33,299,299,259,93,324,443,107,55,270,58,21,251,0,225,1,176,29,54,317,274,63,339,208,124,195,122,25,126,181,320,360,221,254,86,188,195,71,291,43,65,90,22,186,136],[1416,1381,1307,859,1035,1202,1090,1007,745,397,859,1294,270,1449,712,651,824,633,700,945,312,582,552,188,693,61,719,622,634,208,749,899,205,177,626,142,59,599,0,600,12,368,72,113,681,579,138,717,515,291,462,289,62,339,418,725,813,441,565,221,372,411,175,644,98,151,211,62,412,274],[0.52,0.505,0.434,0.439,0.454,0.433,0.506,0.463,0.455,0.363,0.416,0.459,0.389,0.418,0.385,0.492,0.43,0.466,0.41,0.434,0.458,0.411,0.384,0.41,0.381,0.541,0.416,0.481,0.409,0.447,0.433,0.493,0.522,0.311,0.431,0.408,0.356,0.419,0,0.375,0.083,0.478,0.403,0.478,0.465,0.473,0.457,0.473,0.404,0.426,0.422,0.422,0.403,0.372,0.433,0.441,0.443,0.501,0.45,0.389,0.505,0.474,0.406,0.452,0.439,0.43,0.427,0.355,0.451,0.496],[87,186,105,120,64,143,129,74,88,75,185,57,46,210,170,104,67,82,87,108,66,68,61,39,119,3,126,112,142,24,129,9,3,26,131,41,12,35,0,63,1,54,7,26,44,42,4,98,103,81,32,44,17,56,67,109,122,28,44,30,42,39,22,110,22,14,25,19,55,32],[282,481,310,313,205,410,291,215,256,242,499,190,118,566,482,251,213,214,239,298,173,206,224,99,370,7,349,274,387,74,338,35,9,84,339,104,37,146,0,205,7,154,25,58,152,142,14,267,309,210,116,109,50,155,192,305,363,70,150,97,124,140,83,259,53,37,79,52,174,103],[0.309,0.387,0.339,0.383,0.312,0.349,0.443,0.344,0.344,0.31,0.371,0.3,0.39,0.371,0.353,0.414,0.315,0.383,0.364,0.362,0.382,0.33,0.272,0.394,0.322,0.429,0.361,0.409,0.367,0.324,0.382,0.257,0.333,0.31,0.386,0.394,0.324,0.24,0,0.307,0.143,0.351,0.28,0.448,0.289,0.296,0.286,0.367,0.333,0.386,0.276,0.404,0.34,0.361,0.349,0.357,0.336,0.4,0.293,0.309,0.339,0.279,0.265,0.425,0.415,0.378,0.316,0.365,0.316,0.311],[650,512,462,257,406,378,422,392,251,69,172,537,59,395,104,216,287,213,200,302,77,171,151,38,145,30,173,187,117,69,195,434,104,29,139,17,9,216,0,162,0,122,22,28,273,232,59,241,105,43,163,78,8,70,114,211,238,193,210,56,146,156,49,181,21,51,65,3,131,104],[1134,900,997,546,830,792,799,792,489,155,360,1104,152,883,230,400,611,419,461,647,139,376,328,89,323,54,370,348,247,134,411,864,196,93,287,38,22,453,0,395,5,214,47,55,529,437,124,450,206,81,346,180,12,184,226,420,450,371,415,124,248,271,92,385,45,114,132,10,238,171],[0.573,0.569,0.463,0.471,0.489,0.477,0.528,0.495,0.513,0.445,0.478,0.486,0.388,0.447,0.452,0.54,0.47,0.508,0.434,0.467,0.554,0.455,0.46,0.427,0.449,0.556,0.468,0.537,0.474,0.515,0.474,0.502,0.531,0.312,0.484,0.447,0.409,0.477,0,0.41,0,0.57,0.468,0.509,0.516,0.531,0.476,0.536,0.51,0.531,0.471,0.433,0.667,0.38,0.504,0.502,0.529,0.52,0.506,0.452,0.589,0.576,0.533,0.47,0.467,0.447,0.492,0.3,0.55,0.608],[0.551,0.573,0.474,0.509,0.485,0.493,0.565,0.5,0.514,0.457,0.523,0.481,0.474,0.49,0.504,0.571,0.47,0.531,0.472,0.491,0.564,0.469,0.439,0.513,0.467,0.566,0.503,0.571,0.521,0.505,0.519,0.498,0.529,0.384,0.536,0.553,0.458,0.448,0,0.428,0.125,0.552,0.451,0.593,0.498,0.509,0.471,0.541,0.504,0.565,0.457,0.498,0.54,0.454,0.513,0.517,0.518,0.533,0.488,0.457,0.562,0.522,0.469,0.537,0.551,0.477,0.486,0.508,0.518,0.555],[359,447,334,118,395,393,292,198,145,54,126,430,30,454,140,93,164,102,375,203,58,106,105,29,111,20,115,103,93,36,110,175,38,40,49,21,11,212,0,80,0,51,24,25,185,129,37,95,30,13,80,39,8,30,49,123,196,45,194,29,62,69,44,72,14,27,31,0,57,33],[491,498,403,142,475,477,334,254,192,66,161,565,50,528,177,136,220,134,432,271,87,142,140,37,138,29,156,159,124,42,132,228,49,57,62,26,15,322,0,102,0,83,30,34,242,193,52,126,46,18,117,50,8,33,54,151,239,64,256,44,99,111,55,84,15,39,49,0,82,54],[0.731,0.898,0.829,0.831,0.832,0.824,0.874,0.78,0.755,0.818,0.783,0.761,0.6,0.86,0.791,0.684,0.745,0.761,0.868,0.749,0.667,0.746,0.75,0.784,0.804,0.69,0.737,0.648,0.75,0.857,0.833,0.768,0.776,0.702,0.79,0.808,0.733,0.658,0,0.784,0,0.614,0.8,0.735,0.764,0.668,0.712,0.754,0.652,0.722,0.684,0.78,1,0.909,0.907,0.815,0.82,0.703,0.758,0.659,0.626,0.622,0.8,0.857,0.933,0.692,0.633,0,0.695,0.611],[111,45,98,49,79,61,95,103,108,12,67,106,31,79,65,29,74,77,52,91,15,165,42,8,84,12,98,58,25,39,36,123,29,19,21,8,1,99,0,58,1,52,16,21,100,154,39,97,37,19,81,25,5,19,28,28,70,57,47,50,52,101,18,37,14,12,25,6,57,79],[454,544,458,243,279,336,398,353,335,174,299,186,91,484,354,256,258,248,229,313,113,347,157,75,336,33,401,352,150,127,219,272,69,70,164,42,26,262,1,248,1,211,26,21,167,353,115,294,211,132,322,123,15,180,148,351,303,90,249,91,282,179,114,158,54,56,108,47,179,172],[565,589,556,292,358,397,493,456,443,186,366,292,122,563,419,285,332,325,281,404,128,512,199,83,420,45,499,410,175,166,255,395,98,89,185,50,27,361,1,306,2,263,42,42,267,507,154,391,248,151,403,148,20,199,176,379,373,147,296,141,334,280,132,195,68,68,133,53,236,251],[514,361,299,318,321,296,186,120,140,71,188,164,27,329,97,169,138,117,135,201,59,177,109,39,163,9,138,95,63,57,99,130,16,27,56,14,14,135,0,118,1,219,10,21,52,128,43,120,49,96,117,53,11,63,109,171,135,44,75,24,107,67,29,59,27,26,13,40,77,47],[104,69,62,61,110,95,128,100,74,33,160,78,44,152,105,46,58,41,42,67,33,106,84,14,78,3,72,56,53,37,29,69,11,22,54,11,4,54,1,55,2,73,7,16,24,59,39,105,89,55,68,11,3,16,39,98,126,37,29,30,85,49,19,14,10,17,22,13,42,53],[49,85,38,4,43,27,71,51,29,17,26,46,6,29,40,21,40,10,19,23,14,20,19,10,57,3,53,17,29,11,5,29,9,11,25,10,1,127,0,12,1,19,6,5,7,55,16,32,56,4,26,7,1,17,17,38,35,16,9,9,37,35,25,6,2,9,7,4,33,42],[249,250,176,159,132,202,105,139,81,58,113,182,28,265,143,95,93,57,77,140,43,111,78,26,121,8,120,94,70,33,115,116,24,15,46,13,2,110,0,114,4,79,17,19,70,66,26,70,54,65,95,23,13,52,97,138,83,32,61,32,68,62,24,53,8,18,34,17,41,35],[143,137,180,146,124,183,133,184,122,129,177,165,63,230,232,114,164,136,87,170,129,202,168,66,234,9,171,154,142,68,119,154,39,67,120,50,25,215,0,178,2,102,30,28,94,153,61,163,173,98,184,90,33,100,124,176,198,94,69,120,109,124,45,127,29,21,100,53,173,133],[1920,2029,1573,992,1399,1578,1523,1204,911,417,1025,1675,286,1874,858,837,939,774,1036,1131,410,652,590,222,758,89,839,813,753,246,887,1070,255,176,720,178,65,749,0,593,3,457,89,159,863,719,167,871,549,342,502,327,75,338,478,872,1038,515,746,231,480,498,208,764,122,171,236,63,484,337],[987,641,902,1143,323,443,324,723,823,1318,795,163,342,373,144,340,636,307,397,337,1082,337,629,933,855,202,459,463,639,169,157,101,453,966,309,661,300,142,3,73,14,900,99,84,157,125,29,186,429,160,78,263,101,213,79,278,311,87,376,312,678,279,55,117,116,80,63,1012,512,177],[986,641,902,1073,219,335,297,685,776,1278,494,163,186,325,98,324,473,246,327,139,796,269,278,583,341,198,256,136,270,81,67,97,200,838,132,91,66,63,0,6,1,759,16,8,13,45,17,86,278,34,8,38,2,67,9,93,114,5,101,170,425,118,9,4,2,5,9,570,114,151],[38478,24208,32796,41186,10071,13648,9680,25802,29050,45603,22766,5814,7620,12003,3893,11330,20360,8622,12188,8351,32516,9406,15757,26499,20190,5319,10747,10056,13152,3473,3969,3146,11038,31280,7237,10717,6485,3443,6,1687,66,31836,1587,1380,2838,2660,615,4027,10642,2914,2232,3552,1324,3944,1413,4585,6562,1684,8051,7350,15615,6055,647,2182,1162,769,671,27661,10736,3238],[9687,5912,8014,7403,1437,2176,1741,5044,4906,8640,2973,1091,1009,2153,579,1873,3277,1158,1785,1267,4985,986,2340,3842,2603,705,1215,1435,2244,361,585,572,2388,4647,1083,1161,813,375,0,225,5,4324,201,155,568,367,63,548,1361,271,195,446,144,414,181,651,860,334,1220,802,1516,742,71,334,110,91,90,4007,1359,261],[19459,12228,17683,16733,3231,4973,3487,11156,10713,19395,6955,2431,2228,5070,1482,3955,7475,2596,4297,2939,10732,2259,5523,8706,5915,1509,2815,3249,5400,882,1325,1162,5278,11198,2587,2911,2004,951,0,600,24,9361,506,360,1202,787,138,1199,3332,645,462,1097,325,1046,418,1515,2021,655,2816,1911,3390,1616,175,751,289,218,211,8724,2896,543],[1343,1143,1021,1832,247,540,371,750,593,2128,952,96,290,702,341,578,654,287,710,407,978,251,431,1251,895,6,235,453,839,99,220,13,236,1145,502,745,317,84,0,63,3,844,50,57,67,55,4,137,500,153,32,247,86,186,67,210,296,33,221,290,391,140,22,123,59,19,25,1582,57,55],[3953,3009,2966,4928,754,1499,948,2183,1773,5773,2704,316,785,1929,939,1522,1929,764,1938,1121,2576,719,1501,3326,2668,25,730,1231,2386,305,594,51,689,3364,1333,1871,919,302,0,205,10,2528,175,153,214,190,14,392,1452,412,116,613,220,530,192,599,914,91,739,784,1133,467,83,300,172,56,79,3890,212,201],[8344,4769,6993,5571,1190,1636,1370,4294,4313,6512,2021,995,719,1451,238,1295,2623,871,1075,860,4007,735,1909,2591,1708,699,980,982,1405,262,365,559,2152,3502,581,416,496,291,0,162,2,3480,151,98,501,312,59,411,861,118,163,199,58,228,114,441,564,301,999,512,1125,602,49,211,51,72,65,2425,1302,206],[15506,9219,14717,11805,2477,3474,2539,8973,8940,13622,4251,2115,1443,3141,543,2433,5546,1832,2359,1818,8156,1540,4022,5380,3247,1484,2085,2018,3014,577,731,1111,4589,7834,1254,1040,1085,649,0,395,14,6833,331,207,988,597,124,807,1880,233,346,484,105,516,226,916,1107,564,2077,1127,2257,1149,92,451,117,162,132,4834,2684,342],[6116,4599,5448,2680,1271,1584,767,2460,2372,6908,1313,784,390,1307,318,552,1682,484,1628,467,3478,438,1079,1838,961,423,569,607,864,201,197,221,871,2562,205,518,392,326,0,80,0,2617,124,104,315,173,37,161,296,43,80,96,24,105,49,276,398,59,842,321,533,249,44,82,27,43,31,1349,312,63],[8221,5212,6710,3346,1565,1943,926,3102,3077,8565,1835,1031,541,1560,394,783,2140,655,1905,668,4524,586,1516,2288,1295,614,781,896,1082,242,238,294,1147,3580,258,612,479,515,0,102,0,3662,163,128,427,254,52,217,396,58,117,129,31,129,54,404,514,83,1178,404,728,423,55,99,33,63,49,1755,478,112],[1192,514,1680,1020,439,328,423,1082,1379,1091,873,240,407,328,132,331,653,313,313,333,887,583,510,680,996,361,650,399,298,118,86,173,514,1154,131,223,148,148,0,58,2,890,81,72,187,200,39,188,270,41,81,92,13,69,28,64,223,98,332,308,514,330,18,43,26,27,25,630,622,175],[5875,4004,4313,3624,1012,1427,1616,3180,3721,6388,2888,426,889,1996,608,1390,2453,1109,1513,1068,3613,1333,1373,3416,2901,879,1847,1529,1225,403,382,360,1680,3274,676,1016,542,411,1,248,2,3939,161,146,287,476,115,481,1185,285,322,517,54,430,148,676,824,134,1230,660,2091,655,114,195,146,80,108,3708,1291,425],[7067,4518,5993,4644,1451,1755,2039,4262,5100,7479,3761,666,1296,2324,740,1721,3106,1422,1826,1401,4500,1916,1883,4096,3897,1240,2497,1928,1523,521,468,533,2194,4428,807,1239,690,559,1,306,4,4829,242,218,474,676,154,669,1455,326,403,609,67,499,176,740,1047,232,1562,968,2605,985,132,238,172,107,133,4338,1913,600],[6815,2363,2844,4774,837,1510,643,1627,1949,4698,1674,334,395,1168,202,1031,1054,447,764,487,2319,552,1047,2135,1496,255,540,548,763,253,167,172,587,2620,274,352,360,214,0,118,1,4134,82,69,102,161,43,195,538,278,117,157,64,193,109,362,383,69,265,261,1004,222,29,65,47,37,13,2644,371,132],[1657,774,970,1017,440,454,572,963,816,1748,1179,164,345,621,204,351,508,219,335,249,759,387,847,704,666,130,434,301,482,108,63,100,273,1711,214,220,179,94,1,55,2,1472,51,41,50,80,39,157,349,127,68,61,19,77,39,210,320,55,185,195,720,266,19,18,29,23,22,571,354,125],[773,639,437,235,151,195,225,590,416,740,262,96,79,167,71,130,380,63,187,79,336,85,181,317,418,150,263,103,189,31,14,34,234,520,91,208,31,195,0,12,2,424,76,22,15,77,16,63,298,14,26,40,6,43,17,88,98,25,101,105,306,156,25,7,7,10,7,229,265,81],[3316,2083,2572,2333,403,919,388,1742,1401,3516,1154,359,251,921,272,563,1063,313,521,389,1711,382,825,1341,1065,232,573,506,611,161,193,163,789,1784,251,221,283,195,0,114,8,1933,122,58,121,104,26,136,434,163,95,121,60,144,97,308,222,59,371,264,627,244,24,70,29,29,34,1548,269,100],[1843,1213,2635,2092,455,806,575,1807,1414,3603,1624,355,673,984,424,712,1497,580,780,687,2473,742,1426,1919,2168,433,865,761,1413,264,223,196,1015,2568,561,893,567,359,0,178,5,1719,156,117,167,236,61,286,876,222,184,348,112,270,124,432,563,145,472,701,1178,474,45,156,74,36,100,2034,945,348],[26833,17566,22497,19318,4392,6476,4620,13298,12777,26316,8211,3062,2698,6315,1817,4876,8890,3087,5908,3408,14426,2661,6190,10773,7062,1839,3234,3930,6191,1022,1587,1378,5883,13001,2873,3585,2335,1160,0,593,13,12109,576,471,1518,962,167,1394,3518,738,502,1235,398,1119,478,1788,2414,760,3503,2215,3956,1873,208,873,306,244,236,10945,3087,640],[145,99,112,161,132,156,136,138,146,141,163,163,96,87,137,127,158,148,112,161,148,160,162,94,152,62,156,136,134,141,157,101,44,35,155,105,87,142,3,73,14,142,99,84,120,125,29,149,156,160,78,110,101,136,79,150,155,87,154,148,127,123,55,117,73,80,63,99,146,137],[145,99,112,161,132,156,136,137,145,111,163,163,91,81,98,117,111,141,80,115,23,143,29,93,119,59,85,40,64,81,67,97,1,5,68,2,19,63,0,6,1,1,16,8,13,45,17,86,68,34,8,32,2,55,9,78,90,5,15,60,18,18,9,4,2,5,9,17,73,135],[5202,3491,3958,5494,4987,5511,4413,4787,4815,3145,5789,5814,2975,2910,3859,3985,4707,4360,3265,4901,2570,4923,3756,2541,4461,1792,3707,3296,3305,3247,3969,3146,868,590,3839,1132,1936,3443,6,1687,66,3801,1587,1380,2548,2660,615,3708,3911,2914,2232,1675,1324,2713,1413,3407,3955,1684,2897,2720,2734,2131,647,2182,767,769,671,1074,3623,2839],[1361,936,925,823,891,1005,945,974,708,437,723,1091,423,623,573,703,770,611,515,741,287,500,555,286,541,257,446,508,588,344,585,572,199,55,579,132,216,375,0,225,5,407,201,155,511,367,63,515,494,271,195,214,144,285,181,461,589,334,471,258,292,258,71,334,67,91,90,59,341,228],[2695,1848,2113,1884,1947,2289,1912,2123,1532,1053,1769,2431,923,1498,1468,1480,1791,1289,1268,1708,636,1178,1357,669,1317,543,1076,1049,1461,842,1325,1162,417,177,1379,343,499,951,0,600,24,864,506,360,1078,787,138,1108,1206,645,462,481,325,710,418,1056,1358,655,1050,667,621,569,175,751,168,218,211,176,751,475],[207,250,166,241,137,263,196,153,166,193,379,96,166,219,337,236,164,169,194,220,132,155,124,146,255,3,160,147,296,92,220,13,11,26,276,104,85,84,0,63,3,128,50,57,64,55,4,133,194,153,32,103,86,129,67,157,183,33,93,126,67,49,22,123,37,19,25,51,56,53],[621,640,489,650,398,740,483,435,476,545,1054,316,422,588,928,598,505,429,540,611,328,458,459,362,746,7,473,361,833,282,594,51,43,84,729,279,247,302,0,205,10,366,175,153,203,190,14,371,568,412,116,224,220,352,192,437,571,91,306,338,202,196,83,300,99,56,79,150,184,188],[1154,686,759,582,754,742,749,821,542,244,344,995,257,404,236,467,606,442,321,521,155,345,431,140,286,254,286,361,292,252,365,559,188,29,303,28,131,291,0,162,2,279,151,98,447,312,59,382,300,118,163,111,58,156,114,304,406,301,378,132,225,209,49,211,30,72,65,8,285,175],[2074,1208,1624,1234,1549,1549,1429,1688,1056,508,715,2115,501,910,540,882,1286,860,728,1097,308,720,898,307,571,536,603,688,628,560,731,1111,374,93,650,64,252,649,0,395,14,498,331,207,875,597,124,737,638,233,346,257,105,358,226,619,787,564,744,329,419,373,92,451,69,162,132,26,567,287],[734,593,523,259,781,768,494,535,336,218,248,784,157,462,318,232,403,210,546,274,136,210,273,99,185,170,199,243,223,195,197,221,58,40,93,60,93,326,0,80,0,119,124,104,289,173,37,153,120,43,80,52,24,74,49,183,305,59,328,69,107,91,44,82,20,43,31,3,86,56],[1019,669,640,318,938,939,586,647,443,276,304,1031,231,539,394,329,507,284,623,384,201,285,366,124,233,243,274,350,285,235,238,294,75,57,118,72,116,515,0,102,0,197,163,128,387,254,52,205,158,58,117,69,31,88,54,251,380,83,452,96,157,152,55,99,24,63,49,4,129,102],[162,61,170,102,193,115,180,201,211,57,144,240,130,83,130,93,138,194,83,164,40,279,122,36,135,121,212,112,43,109,86,173,41,19,53,17,32,148,0,58,2,96,81,72,163,200,39,167,104,41,81,37,13,50,28,49,142,98,88,83,105,139,18,43,15,27,25,10,127,139],[819,706,650,574,544,655,774,654,608,423,681,426,364,502,605,515,522,584,416,625,271,735,374,295,587,340,629,558,346,371,382,360,146,70,358,95,199,411,1,248,2,424,161,146,258,476,115,445,463,285,322,222,54,325,148,552,524,134,410,252,452,247,114,195,103,80,108,134,365,367],[981,767,820,676,737,770,954,855,819,480,825,666,494,585,735,608,660,778,499,789,311,1014,496,331,722,461,841,670,389,480,468,533,187,89,411,112,231,559,1,306,4,520,242,218,421,676,154,612,567,326,403,259,67,375,176,601,666,232,498,335,557,386,132,238,118,107,133,144,492,506],[1025,471,421,610,533,609,347,370,279,215,397,334,145,335,202,330,272,233,218,334,120,299,282,153,277,86,197,197,138,241,167,172,48,27,142,38,97,214,0,118,1,447,82,69,96,161,43,185,173,278,117,77,64,125,109,249,229,69,125,109,182,92,29,65,35,37,13,86,127,117],[213,93,102,120,224,203,276,171,139,79,312,164,138,157,202,115,111,102,89,130,65,213,198,53,145,33,142,87,113,103,63,100,26,22,107,24,60,94,1,55,2,162,51,41,42,80,39,149,148,127,68,28,19,48,39,150,198,55,63,77,138,81,19,18,20,23,22,27,88,106],[98,110,55,18,79,57,119,92,51,41,43,96,23,30,71,40,74,29,39,39,25,43,38,31,107,41,115,26,55,29,14,34,22,11,50,18,6,195,0,12,2,44,76,22,14,77,16,62,101,14,26,18,6,28,17,71,60,25,13,30,58,44,25,7,6,10,7,8,70,71],[521,324,265,296,225,408,202,322,189,150,254,359,103,277,271,191,201,128,134,213,95,207,209,86,208,71,175,182,143,148,193,163,61,15,115,26,62,195,0,114,8,167,122,58,105,104,26,122,141,163,95,49,60,100,97,211,132,59,117,87,106,89,24,70,16,29,34,40,76,81],[278,177,267,266,232,314,261,341,231,289,363,355,217,241,421,254,311,282,181,358,244,381,341,189,474,124,308,261,274,245,223,196,105,67,256,117,173,359,0,178,5,202,156,117,143,236,61,260,335,222,184,153,112,186,124,303,335,145,136,273,176,190,45,156,48,36,100,127,274,274],[3663,2715,2539,2146,2700,3041,2580,2636,1918,1285,2073,3062,1169,1927,1801,1874,2107,1601,1770,1976,842,1365,1507,817,1522,687,1251,1406,1695,975,1587,1378,467,176,1527,428,610,1160,0,593,13,1061,576,471,1375,962,167,1316,1302,738,502,583,398,773,478,1262,1666,760,1363,711,758,656,208,873,191,244,236,172,824,565],["2015-16","2015-16","0","2015-16","0","0","2015-16","0","2015-16","2015-16","2015-16","0","2015-16","2015-16","0","0","2015-16","2015-16","0","2015-16","2015-16","0","2015-16","0","2015-16","0","2015-16","0","2015-16","2015-16","0","0","2015-16","0","2015-16","2015-16","0","0","0","2015-16","0","2015-16","2015-16","0","0","0","0","0","2015-16","0","2015-16","0","0","0","0","2015-16","2015-16","0","0","2015-16","2015-16","2015-16","2015-16","0","2015-16","2015-16","0","0","0","2015-16"],[31,27,0,34,0,0,24,0,30,38,30,0,29,25,0,0,29,23,0,26,35,0,29,0,35,0,25,0,28,24,0,0,27,0,24,35,0,0,0,19,0,32,22,0,0,0,0,0,28,0,19,0,0,0,0,26,25,0,0,27,31,22,22,0,24,22,0,0,0,24],["CLE","OKC","0","MIA","0","0","SAS","0","MIA","LAC","HOU","0","TOR","IND","0","0","LAC","GSW","0","DET","CLE","0","HOU","0","MEM","0","POR","0","IND","IND","0","0","HOU","0","TOR","CLE","0","0","0","DET","0","GSW","HOU","0","0","0","0","0","LAC","0","MIA","0","0","0","0","ATL","BOS","0","0","OKC","ATL","POR","DAL","0","DET","IND","0","0","0","OKC"],["NBA","NBA","0","NBA","0","0","NBA","0","NBA","NBA","NBA","0","NBA","NBA","0","0","NBA","NBA","0","NBA","NBA","0","NBA","0","NBA","0","NBA","0","NBA","NBA","0","0","NBA","0","NBA","NBA","0","0","0","NBA","0","NBA","NBA","0","0","0","0","0","NBA","0","NBA","0","0","0","0","NBA","NBA","0","0","NBA","NBA","NBA","NBA","0","NBA","NBA","0","0","0","NBA"],["SF","SF","0","SF","0","0","SF","0","PF","SF","SF","0","SF","SF","0","0","SF","SF","0","SF","SF","0","SF","0","SF","0","SF","0","SF","SF","0","0","PF","0","SF","SF","0","0","0","SF","0","SF","SF","0","0","0","0","0","SF","0","SF","0","0","0","0","SF","SF","0","0","SF","SF","SF","SF","0","SF","SF","0","0","0","SG"],[21,18,0,14,0,0,10,0,14,5,5,0,20,7,0,0,6,24,0,4,21,0,5,0,4,0,11,0,7,7,0,0,5,0,20,12,0,0,0,4,0,24,4,0,0,0,0,0,6,0,13,0,0,0,0,10,6,0,0,6,10,11,5,0,2,4,0,0,0,18],[21,18,0,14,0,0,10,0,14,1,5,0,19,7,0,0,1,23,0,4,2,0,1,0,4,0,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,2,0,0,0,0,10,6,0,0,0,2,11,1,0,0,0,0,0,0,18],[822,726,0,492,0,0,339,0,495,54,181,0,596,275,0,0,159,743,0,144,381,0,77,0,139,0,372,0,92,198,0,0,80,0,335,55,0,0,0,81,0,767,34,0,0,0,0,0,77,0,330,0,0,0,0,325,197,0,0,51,203,272,95,0,22,10,0,0,0,471],[219,175,0,68,0,0,83,0,65,2,13,0,62,56,0,0,21,82,0,22,44,0,7,0,16,0,56,0,10,14,0,0,22,0,46,2,0,0,0,12,0,78,4,0,0,0,0,0,5,0,32,0,0,0,0,44,20,0,0,3,22,47,17,0,5,3,0,0,0,40],[417,407,0,158,0,0,166,0,138,12,51,0,159,123,0,0,46,213,0,47,84,0,27,0,46,0,128,0,38,31,0,0,46,0,119,10,0,0,0,23,0,164,13,0,0,0,0,0,14,0,74,0,0,0,0,121,72,0,0,9,46,110,37,0,6,4,0,0,0,86],[0.525,0.43,0,0.43,0,0,0.5,0,0.471,0.167,0.255,0,0.39,0.455,0,0,0.457,0.385,0,0.468,0.524,0,0.259,0,0.348,0,0.438,0,0.263,0.452,0,0,0.478,0,0.387,0.2,0,0,0,0.522,0,0.476,0.308,0,0,0,0,0,0.357,0,0.432,0,0,0,0,0.364,0.278,0,0,0.333,0.478,0.427,0.459,0,0.833,0.75,0,0,0,0.465],[32,31,0,13,0,0,17,0,24,1,4,0,26,18,0,0,4,26,0,7,11,0,1,0,3,0,28,0,2,11,0,0,2,0,21,1,0,0,0,6,0,25,1,0,0,0,0,0,3,0,5,0,0,0,0,16,10,0,0,2,7,15,4,0,2,0,0,0,0,12],[94,110,0,46,0,0,39,0,57,5,28,0,79,43,0,0,10,76,0,18,28,0,10,0,18,0,70,0,20,19,0,0,6,0,64,7,0,0,0,10,0,65,3,0,0,0,0,0,9,0,18,0,0,0,0,61,41,0,0,4,19,44,13,0,3,0,0,0,0,37],[0.34,0.282,0,0.283,0,0,0.436,0,0.421,0.2,0.143,0,0.329,0.419,0,0,0.4,0.342,0,0.389,0.393,0,0.1,0,0.167,0,0.4,0,0.1,0.579,0,0,0.333,0,0.328,0.143,0,0,0,0.6,0,0.385,0.333,0,0,0,0,0,0.333,0,0.278,0,0,0,0,0.262,0.244,0,0,0.5,0.368,0.341,0.308,0,0.667,0,0,0,0,0.324],[187,144,0,55,0,0,66,0,41,1,9,0,36,38,0,0,17,56,0,15,33,0,6,0,13,0,28,0,8,3,0,0,20,0,25,1,0,0,0,6,0,53,3,0,0,0,0,0,2,0,27,0,0,0,0,28,10,0,0,1,15,32,13,0,3,3,0,0,0,28],[323,297,0,112,0,0,127,0,81,7,23,0,80,80,0,0,36,137,0,29,56,0,17,0,28,0,58,0,18,12,0,0,40,0,55,3,0,0,0,13,0,99,10,0,0,0,0,0,5,0,56,0,0,0,0,60,31,0,0,5,27,66,24,0,3,4,0,0,0,49],[0.579,0.485,0,0.491,0,0,0.52,0,0.506,0.143,0.391,0,0.45,0.475,0,0,0.472,0.409,0,0.517,0.589,0,0.353,0,0.464,0,0.483,0,0.444,0.25,0,0,0.5,0,0.455,0.333,0,0,0,0.462,0,0.535,0.3,0,0,0,0,0,0.4,0,0.482,0,0,0,0,0.467,0.323,0,0,0.2,0.556,0.485,0.542,0,1,0.75,0,0,0,0.571],[0.564,0.468,0,0.472,0,0,0.551,0,0.558,0.208,0.294,0,0.472,0.528,0,0,0.5,0.446,0,0.543,0.589,0,0.278,0,0.38,0,0.547,0,0.289,0.629,0,0,0.5,0,0.475,0.25,0,0,0,0.652,0,0.552,0.346,0,0,0,0,0,0.464,0,0.466,0,0,0,0,0.43,0.347,0,0,0.444,0.554,0.495,0.514,0,1,0.75,0,0,0,0.535],[82,130,0,21,0,0,42,0,32,1,3,0,27,61,0,0,15,26,0,20,15,0,7,0,8,0,21,0,2,15,0,0,6,0,13,1,0,0,0,2,0,32,0,0,0,0,0,0,3,0,21,0,0,0,0,15,7,0,0,0,8,12,9,0,0,1,0,0,0,8],[124,146,0,24,0,0,51,0,38,4,4,0,36,64,0,0,25,34,0,23,20,0,8,0,10,0,29,0,3,16,0,0,7,0,20,4,0,0,0,2,0,57,0,0,0,0,0,0,3,0,30,0,0,0,0,22,11,0,0,2,15,25,14,0,0,1,0,0,0,20],[0.661,0.89,0,0.875,0,0,0.824,0,0.842,0.25,0.75,0,0.75,0.953,0,0,0.6,0.765,0,0.87,0.75,0,0.875,0,0.8,0,0.724,0,0.667,0.938,0,0,0.857,0,0.65,0.25,0,0,0,1,0,0.561,0,0,0,0,0,0,1,0,0.7,0,0,0,0,0.682,0.636,0,0,0,0.533,0.48,0.643,0,0,1,0,0,0,0.4],[42,13,0,7,0,0,14,0,19,0,7,0,23,9,0,0,3,27,0,2,16,0,3,0,5,0,23,0,4,5,0,0,4,0,4,1,0,0,0,0,0,35,1,0,0,0,0,0,5,0,17,0,0,0,0,8,5,0,0,1,8,22,9,0,0,0,0,0,0,25],[158,115,0,59,0,0,49,0,64,6,14,0,58,44,0,0,16,85,0,11,58,0,4,0,24,0,72,0,20,23,0,0,17,0,28,3,0,0,0,16,0,70,6,0,0,0,0,0,13,0,46,0,0,0,0,58,34,0,0,6,33,34,11,0,2,0,0,0,0,76],[200,128,0,66,0,0,63,0,83,6,21,0,81,53,0,0,19,112,0,13,74,0,7,0,29,0,95,0,24,28,0,0,21,0,32,4,0,0,0,16,0,105,7,0,0,0,0,0,18,0,63,0,0,0,0,66,39,0,0,7,41,56,20,0,2,0,0,0,0,101],[160,60,0,35,0,0,28,0,22,1,4,0,17,30,0,0,4,30,0,10,14,0,8,0,11,0,20,0,4,8,0,0,3,0,11,3,0,0,0,0,0,90,1,0,0,0,0,0,2,0,8,0,0,0,0,19,13,0,0,0,17,7,7,0,3,0,0,0,0,14],[49,18,0,8,0,0,26,0,13,2,13,0,18,14,0,0,6,17,0,2,10,0,0,0,4,0,8,0,1,2,0,0,1,0,13,0,0,0,0,1,0,29,0,0,0,0,0,0,1,0,8,0,0,0,0,15,9,0,0,1,10,10,4,0,1,0,0,0,0,23],[27,18,0,3,0,0,14,0,9,0,1,0,7,5,0,0,2,4,0,0,1,0,1,0,1,0,10,0,1,0,0,0,0,0,5,0,0,0,0,0,0,10,3,0,0,0,0,0,4,0,4,0,0,0,0,6,3,0,0,0,6,3,3,0,0,1,0,0,0,19],[75,65,0,18,0,0,16,0,23,2,12,0,18,23,0,0,3,18,0,5,13,0,6,0,13,0,21,0,3,3,0,0,7,0,16,1,0,0,0,3,0,23,0,0,0,0,0,0,2,0,12,0,0,0,0,10,7,0,0,0,10,11,5,0,0,0,0,0,0,11],[54,37,0,27,0,0,21,0,24,6,16,0,62,24,0,0,12,46,0,17,34,0,13,0,13,0,31,0,7,20,0,0,8,0,28,3,0,0,0,10,0,37,3,0,0,0,0,0,6,0,35,0,0,0,0,14,17,0,0,4,17,38,12,0,2,0,0,0,0,45],[552,511,0,170,0,0,225,0,186,6,33,0,177,191,0,0,61,216,0,71,114,0,22,0,43,0,161,0,24,54,0,0,52,0,126,6,0,0,0,32,0,213,9,0,0,0,0,0,16,0,90,0,0,0,0,119,57,0,0,8,59,121,47,0,12,7,0,0,0,100],[199,91,66,101,32,4,75,7,62,163,74,0,47,61,0,13,38,64,12,4,126,0,41,26,83,4,16,0,30,8,6,0,21,85,31,140,18,0,0,4,0,93,4,0,0,0,0,13,6,0,13,0,0,16,0,35,17,0,0,6,88,11,5,3,4,4,0,94,16,20],[199,91,66,95,29,4,75,7,56,159,62,0,42,61,0,13,15,56,12,4,75,0,1,17,48,4,13,0,10,0,5,0,5,85,11,19,2,0,0,0,0,54,0,0,0,0,0,0,0,0,2,0,0,0,0,12,7,0,0,0,69,11,1,0,0,0,0,21,0,18],[8383,3816,2579,3884,1218,123,2479,279,2427,6128,2298,0,1473,2340,0,525,1112,2041,370,144,3659,0,790,715,2086,91,522,0,516,199,206,0,416,3135,600,1952,403,0,0,81,0,3275,34,0,0,0,0,337,77,0,330,0,0,186,0,644,378,0,0,51,1755,272,95,10,27,10,0,1552,166,480],[1965,877,589,639,166,6,417,48,380,1014,279,0,180,360,0,93,140,261,53,22,519,0,127,92,229,14,73,0,68,14,23,0,83,431,71,172,50,0,0,12,0,396,4,0,0,0,0,40,5,0,32,0,0,17,0,75,43,0,0,3,156,47,17,1,6,3,0,165,22,40],[4112,1926,1414,1497,385,33,815,114,835,2397,633,0,404,843,0,213,362,623,138,47,1094,0,325,191,569,27,159,0,178,31,59,0,193,1108,195,423,103,0,0,23,0,886,13,0,0,0,0,91,14,0,74,0,0,53,0,200,119,0,0,9,384,110,37,3,7,4,0,414,37,89],[287,184,73,143,49,1,100,4,57,272,113,0,65,118,0,29,33,75,11,7,59,0,29,49,83,0,35,0,21,11,11,0,7,128,31,104,19,0,0,6,0,114,1,0,0,0,0,12,3,0,5,0,0,9,0,22,16,0,0,2,51,15,4,1,2,0,0,97,0,12],[895,559,228,418,129,12,238,19,183,767,289,0,178,330,0,80,93,211,38,18,178,0,111,108,275,1,81,0,82,19,33,0,21,415,106,266,47,0,0,10,0,305,3,0,0,0,0,33,9,0,18,0,0,32,0,90,58,0,0,4,176,44,13,2,3,0,0,246,1,37],[1678,693,516,496,117,5,317,44,323,742,166,0,115,242,0,64,107,186,42,15,460,0,98,43,146,14,38,0,47,3,12,0,76,303,40,68,31,0,0,6,0,282,3,0,0,0,0,28,2,0,27,0,0,8,0,53,27,0,0,1,105,32,13,0,4,3,0,68,22,28],[3217,1367,1186,1079,256,21,577,95,652,1630,344,0,226,513,0,133,269,412,100,29,916,0,214,83,294,26,78,0,96,12,26,0,172,693,89,157,56,0,0,13,0,581,10,0,0,0,0,58,5,0,56,0,0,21,0,110,61,0,0,5,208,66,24,1,4,4,0,168,36,52],[1355,682,442,253,122,16,166,33,169,859,117,0,66,284,0,20,105,90,37,20,359,0,62,38,88,6,36,0,41,15,5,0,27,190,16,98,18,0,0,2,0,207,0,0,0,0,0,10,3,0,21,0,0,4,0,36,17,0,0,0,57,12,9,2,0,1,0,37,8,8],[1816,804,535,324,150,16,223,40,221,1035,167,0,88,356,0,29,134,119,45,23,488,0,92,46,117,10,48,0,48,16,7,0,36,266,25,116,27,0,0,2,0,351,0,0,0,0,0,21,3,0,30,0,0,4,0,57,24,0,0,2,74,25,14,2,0,1,0,44,9,20],[316,84,147,108,33,2,126,10,105,123,83,0,68,58,0,13,30,97,10,2,106,0,23,15,112,8,37,0,12,5,3,0,26,120,5,39,12,0,0,0,0,109,1,0,0,0,0,24,5,0,17,0,0,1,0,12,17,0,0,1,58,22,9,1,0,0,0,29,15,25],[1442,646,332,345,122,9,417,36,313,848,301,0,159,379,0,73,125,230,43,11,477,0,58,73,269,18,94,0,49,23,20,0,79,288,47,188,41,0,0,16,0,370,6,0,0,0,0,56,13,0,46,0,0,22,0,112,54,0,0,6,204,34,11,1,2,0,0,207,27,78],[1758,730,479,453,155,11,543,46,418,971,384,0,227,437,0,86,155,327,53,13,583,0,81,88,381,26,131,0,61,28,23,0,105,408,52,227,53,0,0,16,0,479,7,0,0,0,0,80,18,0,63,0,0,23,0,124,71,0,0,7,262,56,20,2,2,0,0,236,42,103],[1348,340,183,339,81,12,114,10,127,572,147,0,63,230,0,38,49,85,27,10,234,0,41,59,125,6,26,0,33,8,10,0,15,234,17,44,22,0,0,0,0,395,1,0,0,0,0,18,2,0,8,0,0,8,0,34,23,0,0,0,102,7,7,1,4,0,0,87,2,14],[354,99,83,90,50,3,127,9,68,202,106,0,43,105,0,5,22,42,9,2,85,0,28,19,83,0,18,0,11,2,4,0,7,131,22,37,14,0,0,1,0,137,0,0,0,0,0,12,1,0,8,0,0,1,0,27,15,0,0,1,85,10,4,0,1,0,0,42,9,23],[186,106,22,17,15,0,49,2,46,105,21,0,16,35,0,4,18,23,4,0,41,0,8,6,30,2,18,0,8,0,2,0,7,56,12,37,1,0,0,0,0,34,3,0,0,0,0,2,4,0,4,0,0,4,0,15,7,0,0,0,31,3,3,0,0,1,0,14,6,19],[700,307,192,196,40,3,96,21,102,472,99,0,44,175,0,24,56,61,16,5,217,0,32,24,102,8,27,0,27,3,8,0,32,141,26,38,18,0,0,3,0,163,0,0,0,0,0,6,2,0,12,0,0,6,0,23,15,0,0,0,60,11,5,1,0,0,0,56,4,11],[474,224,249,201,67,4,168,15,136,536,198,0,128,195,0,39,88,137,32,17,293,0,96,46,255,13,46,0,67,20,12,0,35,244,57,175,41,0,0,10,0,187,3,0,0,0,0,16,6,0,35,0,0,18,0,42,44,0,0,4,147,38,12,0,2,0,0,158,20,45],[5572,2620,1693,1674,503,29,1100,133,986,3159,788,0,491,1122,0,235,418,687,154,71,1456,0,345,271,629,34,217,0,198,54,62,0,200,1180,189,546,137,0,0,32,0,1113,9,0,0,0,0,102,16,0,90,0,0,47,0,208,119,0,0,8,420,121,47,5,14,7,0,464,52,100]],"container":"<table class=\"nowrap\">\n  <thead>\n    <tr>\n      <th>fit\u003c/th>\n      <th>NBASalary\u003c/th>\n      <th>Player\u003c/th>\n      <th>Pos.x\u003c/th>\n      <th>Ht\u003c/th>\n      <th>Wt\u003c/th>\n      <th>Birth.Date\u003c/th>\n      <th>Var.7\u003c/th>\n      <th>Exp\u003c/th>\n      <th>College\u003c/th>\n      <th>playerurls\u003c/th>\n      <th>Season\u003c/th>\n      <th>Age\u003c/th>\n      <th>Tm\u003c/th>\n      <th>G\u003c/th>\n      <th>GS\u003c/th>\n      <th>MP\u003c/th>\n      <th>FG\u003c/th>\n      <th>FGA\u003c/th>\n      <th>FGpct\u003c/th>\n      <th>ThreePt\u003c/th>\n      <th>ThreePtAttmpt\u003c/th>\n      <th>ThreePtpct\u003c/th>\n      <th>TwoPt\u003c/th>\n      <th>TwoPtAttmpt\u003c/th>\n      <th>TwoPtpct\u003c/th>\n      <th>eFGpct\u003c/th>\n      <th>FT\u003c/th>\n      <th>FTA\u003c/th>\n      <th>FTpct\u003c/th>\n      <th>ORB\u003c/th>\n      <th>DRB\u003c/th>\n      <th>TRB\u003c/th>\n      <th>AST\u003c/th>\n      <th>STL\u003c/th>\n      <th>BLK\u003c/th>\n      <th>TOV\u003c/th>\n      <th>PF\u003c/th>\n      <th>PTS\u003c/th>\n      <th>CareerG\u003c/th>\n      <th>CareerGS\u003c/th>\n      <th>CareerMP\u003c/th>\n      <th>CareerFG\u003c/th>\n      <th>CareerFGA\u003c/th>\n      <th>Career3P\u003c/th>\n      <th>Career3PA\u003c/th>\n      <th>Career2P\u003c/th>\n      <th>Career2PA\u003c/th>\n      <th>CareerFT\u003c/th>\n      <th>CareerFTA\u003c/th>\n      <th>CareerORB\u003c/th>\n      <th>CareerDRB\u003c/th>\n      <th>CareerTRB\u003c/th>\n      <th>CareerAST\u003c/th>\n      <th>CareerSTL\u003c/th>\n      <th>CareerBLK\u003c/th>\n      <th>CareerTOV\u003c/th>\n      <th>CareerPF\u003c/th>\n      <th>CareerPTS\u003c/th>\n      <th>Last2YrsG\u003c/th>\n      <th>Last2YrsGS\u003c/th>\n      <th>Last2YrsMP\u003c/th>\n      <th>Last2YrsFG\u003c/th>\n      <th>Last2YrsFGA\u003c/th>\n      <th>Last2Yrs3P\u003c/th>\n      <th>Last2Yrs3PA\u003c/th>\n      <th>Last2Yrs2P\u003c/th>\n      <th>Last2Yrs2PA\u003c/th>\n      <th>Last2YrsFT\u003c/th>\n      <th>Last2YrsFTA\u003c/th>\n      <th>Last2YrsORB\u003c/th>\n      <th>Last2YrsDRB\u003c/th>\n      <th>Last2YrsTRB\u003c/th>\n      <th>Last2YrsAST\u003c/th>\n      <th>Last2YrsSTL\u003c/th>\n      <th>Last2YrsBLK\u003c/th>\n      <th>Last2YrsTOV\u003c/th>\n      <th>Last2YrsPF\u003c/th>\n      <th>Last2YrsPTS\u003c/th>\n      <th>PlayoffSeason\u003c/th>\n      <th>PlayoffAge\u003c/th>\n      <th>PlayoffTm\u003c/th>\n      <th>PlayoffLg\u003c/th>\n      <th>PlayoffPos\u003c/th>\n      <th>PlayoffG\u003c/th>\n      <th>PlayoffGS\u003c/th>\n      <th>PlayoffMP\u003c/th>\n      <th>PlayoffFG\u003c/th>\n      <th>PlayoffFGA\u003c/th>\n      <th>PlayoffFGpct\u003c/th>\n      <th>Playoff3P\u003c/th>\n      <th>Playoff3PA\u003c/th>\n      <th>Playoff3Ppct\u003c/th>\n      <th>Playoff2P\u003c/th>\n      <th>Playoff2PA\u003c/th>\n      <th>Playoff2Ppct\u003c/th>\n      <th>PlayoffeFGpct\u003c/th>\n      <th>PlayoffFT\u003c/th>\n      <th>PlayoffFTA\u003c/th>\n      <th>PlayoffFTpct\u003c/th>\n      <th>PlayoffORB\u003c/th>\n      <th>PlayoffDRB\u003c/th>\n      <th>PlayoffTRB\u003c/th>\n      <th>PlayoffAST\u003c/th>\n      <th>PlayoffSTL\u003c/th>\n      <th>PlayoffBLK\u003c/th>\n      <th>PlayoffTOV\u003c/th>\n      <th>PlayoffPF\u003c/th>\n      <th>PlayoffPTS\u003c/th>\n      <th>CareerPlayoffG\u003c/th>\n      <th>CareerPlayoffGS\u003c/th>\n      <th>CareerPlayoffMP\u003c/th>\n      <th>CareerPlayoffFG\u003c/th>\n      <th>CareerPlayoffFGA\u003c/th>\n      <th>CareerPlayoff3P\u003c/th>\n      <th>CareerPlayoff3PA\u003c/th>\n      <th>CareerPlayoff2P\u003c/th>\n      <th>CareerPlayoff2PA\u003c/th>\n      <th>CareerPlayoffFT\u003c/th>\n      <th>CareerPlayoffFTA\u003c/th>\n      <th>CareerPlayoffORB\u003c/th>\n      <th>CareerPlayoffDRB\u003c/th>\n      <th>CareerPlayoffTRB\u003c/th>\n      <th>CareerPlayoffAST\u003c/th>\n      <th>CareerPlayoffSTL\u003c/th>\n      <th>CareerPlayoffBLK\u003c/th>\n      <th>CareerPlayoffTOV\u003c/th>\n      <th>CareerPlayoffPF\u003c/th>\n      <th>CareerPlayoffPTS\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"dom":"tp","scrollX":true,"fixedColumns":{"leftColumns":3},"columnDefs":[{"className":"dt-right","targets":[0,1,4,5,8,12,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,80,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nDTWidget.formatRound(this, row, data, 4, 3);\nDTWidget.formatCurrency(this, row, data, 0, '$', 2, 3, ',', '.', true);\nDTWidget.formatCurrency(this, row, data, 1, '$', 2, 3, ',', '.', true);\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script></p>
+<p><br> <br></p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
